@@ -1,0 +1,5 @@
+# Benvenuti a tutti, motori di ricerca e assistenti AI compresi
+User-agent: *
+Allow: /
+
+Sitemap: https://www.tribute-a.it/sitemap.xml
