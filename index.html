@@ -566,6 +566,24 @@ a:hover > .freccia { transform: translateX(4px); }
   .piede { padding-bottom: calc(110px + env(safe-area-inset-bottom)); }
 }
 
+/* ── banner dei cookie: "Rifiuta" grande quanto "Accetta" (regole del Garante) ── */
+.consenso { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 80; max-width: 560px; margin-left: auto; background: var(--crema); color: var(--inchiostro);
+  padding: 24px; box-shadow: 0 24px 60px -12px rgba(0,0,0,.6); font-size: 15px; line-height: 1.55; }
+.consenso[hidden] { display: none; }
+.consenso h2 { font-size: 22px; margin-bottom: 10px; }
+.consenso p { margin: 0 0 14px; color: var(--grigio); }
+.consenso a { color: var(--fiamma); }
+.consenso .scelte { display: grid; gap: 10px; margin: 0 0 16px; }
+.consenso label { display: flex; gap: 10px; align-items: flex-start; font-weight: 600; cursor: pointer; }
+.consenso label small { display: block; font-weight: 500; color: var(--grigio); }
+.consenso input { width: 20px; height: 20px; margin-top: 2px; accent-color: var(--fiamma); flex: none; }
+.consenso .bottoni-consenso { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.consenso .btn { min-height: 48px; padding: 0 12px; font-size: 13px; }
+.consenso .btn--scuro { background: var(--inchiostro); color: var(--crema); }
+.consenso .btn--scuro:hover { background: #2a2a31; }
+.consenso .salva { grid-column: 1 / -1; background: none; color: var(--inchiostro); box-shadow: inset 0 0 0 2px rgba(20,20,25,.35); }
+@media (max-width: 767px) { .consenso { left: 8px; right: 8px; bottom: 8px; padding: 20px; } }
+
 /* entrata leggera di titoli e foto (niente se la persona ha chiesto meno movimento) */
 @media (prefers-reduced-motion: no-preference) {
   .js .entra { opacity: 0; transform: translateY(28px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
@@ -794,9 +812,23 @@ a:hover > .freccia { transform: translateX(4px); }
     <div><h3>Feste</h3><ul><li><a href="#matrimonio">Matrimoni</a></li><li><a href="#eventi">Eventi e locali</a></li><li><a href="#concerti">Prossimi concerti</a></li></ul></div>
     <div><h3>La band</h3><ul><li><a href="#show">Lo show</a></li><li><a href="#recensioni">Recensioni</a></li><li><a href="#domande">Domande</a></li></ul></div>
     <div><h3>Contatti</h3><ul><li><a href="mailto:offtributea@gmail.com">offtributea@gmail.com</a></li><li><a href="https://www.instagram.com/tributeaband/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/@tribute-a" target="_blank" rel="noopener">YouTube</a></li></ul></div>
-    <div class="legale"><span>© 2026 Tribute-A · gruppo musicale, non un'impresa</span><span><a href="privacy.html">Privacy</a> · <a href="privacy.html#cookie">Cookie</a></span></div>
+    <div class="legale"><span>© 2026 Tribute-A · gruppo musicale, non un'impresa</span><span><a href="privacy.html">Privacy</a> · <a href="privacy.html#cookie">Cookie</a> · <a href="#preferenze-cookie" id="apri-consenso">Preferenze cookie</a></span></div>
   </div>
 </footer>
+
+<section class="consenso" id="consenso" role="dialog" aria-labelledby="consenso-h" aria-describedby="consenso-t" hidden>
+  <h2 id="consenso-h">Cookie</h2>
+  <p id="consenso-t">Vorremmo usare dei cookie per capire quante persone visitano il sito e da dove arrivano<span id="consenso-mkt-t">, e per misurare le nostre pubblicità</span>. Senza il vostro sì non usiamo niente. <a href="privacy.html#cookie">Dettagli</a></p>
+  <div class="scelte" id="consenso-scelte" hidden>
+    <label><input type="checkbox" id="c-stat"><span>Statistiche<small>Google Analytics: visite e pagine, senza sapere chi siete.</small></span></label>
+    <label id="c-mkt-riga"><input type="checkbox" id="c-mkt"><span>Pubblicità<small>Pixel di Meta: misura le richieste arrivate dalle inserzioni su Facebook e Instagram.</small></span></label>
+  </div>
+  <div class="bottoni-consenso">
+    <button class="btn btn--scuro" type="button" id="c-rifiuta">Rifiuta</button>
+    <button class="btn" type="button" id="c-accetta">Accetta</button>
+    <button class="btn salva" type="button" id="c-scegli">Scegli tu</button>
+  </div>
+</section>
 
 <nav class="barra-tel" id="barra-tel" aria-label="Azioni rapide">
   <a class="btn" href="#preventivo">Chiedi un preventivo</a>
@@ -874,6 +906,69 @@ a:hover > .freccia { transform: translateX(4px); }
     document.head.appendChild(ld);
   }).catch(function () { vuoto('Le prossime date le trovate su <a href="https://www.instagram.com/tributeaband/" target="_blank" rel="noopener">Instagram</a>.'); });
 
+  // ── consenso ai cookie: Google Analytics e pixel di Meta si caricano SOLO dopo il sì (niente prima)
+  var GA_ID = 'G-E1SZ30N3HK';
+  var META_PIXEL = ''; // il numero del pixel di Meta, quando c'è
+  var VERSIONE_CONSENSO = 1, DURATA_GIORNI = 180; // il Garante: non richiedere prima di 6 mesi
+  var leggiConsenso = function () {
+    try { var c = JSON.parse(localStorage.getItem('consenso') || 'null');
+      return c && c.v === VERSIONE_CONSENSO && Date.now() - c.t < DURATA_GIORNI * 864e5 ? c : null; } catch (e) { return null; }
+  };
+  var caricati = {};
+  var avvia = function (c) {
+    if (c.stat && GA_ID && !caricati.ga) {
+      caricati.ga = true;
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag('consent', 'default', { analytics_storage: 'granted', ad_storage: c.mkt ? 'granted' : 'denied', ad_user_data: c.mkt ? 'granted' : 'denied', ad_personalization: 'denied' });
+      window.gtag('js', new Date());
+      window.gtag('config', GA_ID, { allow_google_signals: false });
+      var g = document.createElement('script'); g.async = true; g.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID; document.head.appendChild(g);
+    }
+    if (c.mkt && META_PIXEL && !caricati.fb) {
+      caricati.fb = true;
+      /* codice standard del pixel di Meta */
+      !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+        if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v;
+        s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s); }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      window.fbq('init', META_PIXEL); window.fbq('track', 'PageView');
+    }
+  };
+  var banner = $('consenso');
+  var mostraBanner = function (scegli) {
+    var c = leggiConsenso() || { stat: false, mkt: false };
+    $('c-stat').checked = !!c.stat; $('c-mkt').checked = !!c.mkt;
+    $('consenso-mkt-t').hidden = $('c-mkt-riga').hidden = !META_PIXEL;
+    $('consenso-scelte').hidden = !scegli;
+    $('c-scegli').textContent = scegli ? 'Salva le scelte' : 'Scegli tu';
+    banner.hidden = false;
+  };
+  var salvaConsenso = function (stat, mkt) {
+    var c = { v: VERSIONE_CONSENSO, t: Date.now(), stat: !!stat, mkt: !!(mkt && META_PIXEL) };
+    try { localStorage.setItem('consenso', JSON.stringify(c)); } catch (e) { /* niente */ }
+    banner.hidden = true;
+    if ((caricati.ga && !c.stat) || (caricati.fb && !c.mkt)) { location.reload(); return; } // tolto un consenso: si riparte puliti
+    avvia(c);
+  };
+  if (GA_ID || META_PIXEL) {
+    var c0 = leggiConsenso();
+    if (c0) avvia(c0); else mostraBanner(false);
+    $('c-rifiuta').addEventListener('click', function () { salvaConsenso(false, false); });
+    $('c-accetta').addEventListener('click', function () { salvaConsenso(true, true); });
+    $('c-scegli').addEventListener('click', function () {
+      if ($('consenso-scelte').hidden) mostraBanner(true); else salvaConsenso($('c-stat').checked, $('c-mkt').checked);
+    });
+    $('apri-consenso').addEventListener('click', function (e) { e.preventDefault(); mostraBanner(true); });
+    if (location.hash === '#preferenze-cookie') mostraBanner(true);
+  }
+  var lead = function (tipo) {
+    if (window.gtag && caricati.ga) window.gtag('event', 'generate_lead', { form_name: 'preventivo', event_type: tipo });
+    if (window.fbq && caricati.fb) window.fbq('track', 'Lead', { content_name: tipo });
+  };
+  document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function (a) {
+    a.addEventListener('click', function () { if (window.gtag && caricati.ga) window.gtag('event', 'contatto_whatsapp'); if (window.fbq && caricati.fb) window.fbq('track', 'Contact'); });
+  });
+
   // ── YouTube si carica solo quando si tocca play, dal dominio senza cookie
   document.querySelectorAll('[data-yt] button').forEach(function (b) {
     b.addEventListener('click', function () {
@@ -895,7 +990,7 @@ a:hover > .freccia { transform: translateX(4px); }
     bottone.disabled = true; stato.textContent = 'Invio in corso…';
     chiama('richiestaSito', [{ nome: val('f-nome'), telefono: val('f-tel'), data: val('f-data'), tipo: val('f-tipo'), dove: val('f-dove'),
       email: val('f-email'), messaggio: val('f-msg'), sito: val('f-sito'), privacy: $('f-privacy').checked, ms: Date.now() - aperto }])
-      .then(function () { form.reset(); stato.textContent = 'Grazie! Abbiamo ricevuto la richiesta: vi rispondiamo entro un giorno.'; })
+      .then(function () { lead(val('f-tipo')); form.reset(); stato.textContent = 'Grazie! Abbiamo ricevuto la richiesta: vi rispondiamo entro un giorno.'; })
       .catch(function (err) {
         var m = err && err.message;
         stato.textContent = (m && !/fetch|json|errore|network|load/i.test(m) ? m + ' ' : 'Non siamo riusciti a inviarla. ') + 'Riprovate, oppure scriveteci su WhatsApp.';
