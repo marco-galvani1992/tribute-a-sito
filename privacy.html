@@ -3,50 +3,83 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy · Tribute-A</title>
-<meta name="description" content="Come i Tribute-A usano i dati che ci mandate con il modulo del preventivo.">
+<title>Privacy e cookie · Tribute-A</title>
+<meta name="description" content="Come i Tribute-A trattano i dati che ci mandate e quali cookie usa il sito.">
 <link rel="icon" href="foto/logo-nero.svg" type="image/svg+xml">
 <link rel="canonical" href="https://www.tribute-a.it/privacy.html">
 <style>
+  @font-face { font-family: "Montserrat"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("font/montserrat.woff2") format("woff2"); }
+  @font-face { font-family: "Montserrat Alternates"; font-style: normal; font-weight: 800; font-display: swap; src: url("font/montserrat-alternates-800.woff2") format("woff2"); }
   :root { --bg: #f5efe7; --ink: #141419; --muted: #55525a; --accent: #d94c1a; }
-  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 "Montserrat", system-ui, sans-serif; }
-  main { max-width: 720px; margin: 0 auto; padding: 48px 16px 80px; }
-  h1 { font-size: 34px; line-height: 1.15; margin: 0 0 8px; }
-  h2 { font-size: 20px; margin: 32px 0 8px; }
-  p, li { color: var(--ink); }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 500 17px/1.65 "Montserrat", system-ui, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 16px 96px; }
+  h1, h2 { font-family: "Montserrat Alternates", "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; line-height: 1.05; }
+  h1 { font-size: clamp(34px, 6vw, 52px); margin: 24px 0 8px; }
+  h2 { font-size: 22px; margin: 44px 0 10px; }
   .tenue { color: var(--muted); }
   a { color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; margin-top: 12px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 8px; border-bottom: 1px solid rgba(20,20,25,.15); }
+  th { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .torna { font-weight: 700; text-decoration: none; }
 </style>
 </head>
 <body>
 <main>
-  <p><a href="./">← Torna al sito</a></p>
-  <h1>Privacy</h1>
-  <p class="tenue">Ultimo aggiornamento: 16 novembre 2026</p>
+  <a class="torna" href="./">← Torna al sito</a>
+  <h1>Privacy e cookie</h1>
+  <p class="tenue">Ultimo aggiornamento: 17 novembre 2026</p>
 
   <h2>Chi tratta i dati</h2>
-  <p>I Tribute-A, la band che risponde alle richieste di preventivo. Per qualsiasi domanda sui vostri dati scriveteci a
+  <p>Tribute-A è un gruppo musicale formato da tre musicisti: non è una società né un marchio registrato. Il titolare del
+    trattamento è <b>Marco Galvani</b>, che risponde per la band. Per qualsiasi domanda sui vostri dati:
     <a href="mailto:offtributea@gmail.com">offtributea@gmail.com</a>.</p>
 
-  <h2>Quali dati e perché</h2>
-  <p>Con il modulo "Chiedi un preventivo" ci mandate nome, telefono, data e luogo della festa, il tipo di festa e, se volete,
-    email e un messaggio. Li usiamo <b>solo</b> per rispondervi con la disponibilità e il preventivo e, se ci scegliete,
-    per organizzare la serata. Niente newsletter, niente pubblicità, niente cessione ad altri.</p>
-  <p>La base è la vostra richiesta: servono per darvi il preventivo che ci avete chiesto (art. 6.1.b del Regolamento UE 2016/679).</p>
+  <h2>Quali dati, perché e su quale base</h2>
+  <table>
+    <tr><th>Cosa</th><th>Perché</th><th>Base giuridica</th></tr>
+    <tr><td>Nome, telefono, data e luogo della festa, tipo di festa, email e messaggio (se li scrivete) mandati con il modulo</td>
+      <td>Rispondervi con disponibilità e preventivo e, se ci scegliete, organizzare la serata</td>
+      <td>Richiesta vostra e misure prima del contratto (art. 6.1.b GDPR)</td></tr>
+    <tr><td>Quello che ci scrivete su WhatsApp o per email</td><td>Rispondervi</td><td>Richiesta vostra (art. 6.1.b GDPR)</td></tr>
+    <tr><td>Dati tecnici di navigazione (indirizzo IP, browser, pagina visitata) registrati dal servizio che ospita il sito</td>
+      <td>Far funzionare il sito e proteggerlo da abusi</td><td>Legittimo interesse (art. 6.1.f GDPR)</td></tr>
+  </table>
+  <p>Non vendiamo e non cediamo i dati a nessuno, non li usiamo per newsletter o pubblicità e non prendiamo decisioni automatiche su di voi.
+    Il modulo ha un controllo contro i messaggi automatici che non registra niente di più dei campi che compilate.</p>
 
-  <h2>Dove stanno e per quanto</h2>
-  <p>Le richieste finiscono nel gestionale privato della band, su Google Workspace (Google Fogli e Gmail), accessibile solo ai
-    tre membri. Se la richiesta non diventa una data, la cancelliamo entro 24 mesi; se suoniamo per voi, teniamo i dati
-    necessari per il tempo previsto dalla legge.</p>
+  <h2>Chi altro li vede</h2>
+  <p>Solo i tre membri della band. Per lavorare usiamo questi servizi, che trattano i dati per nostro conto:</p>
+  <table>
+    <tr><th>Servizio</th><th>A cosa serve</th></tr>
+    <tr><td>Google (Google LLC / Google Ireland) — Fogli, Gmail, Calendar, Apps Script</td><td>Il gestionale privato della band dove arrivano le richieste, e la posta</td></tr>
+    <tr><td>GitHub (GitHub Inc.) — GitHub Pages</td><td>Ospita il sito: registra per sicurezza i dati tecnici delle visite</td></tr>
+    <tr><td>Aruba S.p.A.</td><td>Il dominio tribute-a.it e le caselle di posta</td></tr>
+    <tr><td>WhatsApp (Meta Platforms)</td><td>Solo se scegliete di scriverci su WhatsApp</td></tr>
+  </table>
+  <p>Google e GitHub hanno sede negli Stati Uniti: i trasferimenti sono coperti dall'EU-US Data Privacy Framework e dalle clausole
+    contrattuali standard approvate dalla Commissione europea.</p>
 
-  <h2>Cookie e servizi esterni</h2>
-  <p>Il sito non usa cookie di profilazione né statistiche. I caratteri arrivano da Google Fonts. I video di YouTube si caricano
-    solo quando premete play, dalla versione "senza cookie" di YouTube.</p>
+  <h2>Per quanto tempo</h2>
+  <p>Le richieste che non diventano una data le cancelliamo entro 24 mesi. Se suoniamo per voi teniamo i dati necessari per
+    il tempo richiesto dalle norme fiscali (di solito 10 anni per i documenti di pagamento).</p>
 
   <h2>I vostri diritti</h2>
-  <p>Potete chiederci in ogni momento di vedere, correggere o cancellare i vostri dati, o di non usarli più: basta una mail a
-    <a href="mailto:offtributea@gmail.com">offtributea@gmail.com</a>. Potete anche rivolgervi al Garante per la protezione
-    dei dati personali (<a href="https://www.garanteprivacy.it">garanteprivacy.it</a>).</p>
+  <p>In ogni momento potete chiederci di vedere, correggere o cancellare i vostri dati, di limitarne l'uso, di opporvi o di
+    riceverli in un formato leggibile: basta una mail a <a href="mailto:offtributea@gmail.com">offtributea@gmail.com</a>, rispondiamo
+    entro 30 giorni. Potete anche presentare reclamo al Garante per la protezione dei dati personali
+    (<a href="https://www.garanteprivacy.it">garanteprivacy.it</a>).</p>
+
+  <h2 id="cookie">Cookie</h2>
+  <p>Oggi il sito <b>non usa cookie</b>: niente statistiche, niente pubblicità, niente profilazione. Per questo non vedete nessun banner.</p>
+  <ul>
+    <li><b>Caratteri:</b> i font Montserrat sono sul nostro sito, non vengono chiesti a Google.</li>
+    <li><b>Video:</b> i video di YouTube si caricano solo se premete play, dalla versione "senza cookie" di YouTube (youtube-nocookie.com).
+      Da quel momento vale anche la <a href="https://policies.google.com/privacy?hl=it">privacy di Google</a>.</li>
+    <li><b>Il modulo e i prossimi concerti</b> parlano con il gestionale della band su Google senza cookie.</li>
+  </ul>
+  <p>Se in futuro useremo statistiche o pubblicità che richiedono cookie, ve lo chiederemo prima con un banner, e potrete dire di no
+    con un clic, come per dire di sì.</p>
 </main>
 </body>
 </html>
