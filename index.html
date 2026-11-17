@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="it" data-type="service" data-radius="soft" data-buttons="block" data-motion>
+<html lang="it">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Tribute-A: party band per matrimoni ed eventi a Verona</title>
-<meta name="description" content="Tre musicisti, due ore di medley dagli anni '60 a oggi. Matrimoni, locali, sagre e feste in Veneto, Lombardia e Trentino. 5,0 su Matrimonio.com.">
+<title>Tribute-A · Party band per matrimoni ed eventi a Verona</title>
+<meta name="description" content="Tre musicisti, due ore di medley dagli anni '60 a oggi, senza pause. Matrimoni, locali, sagre e feste in Veneto, Lombardia e Trentino. 5,0 su Matrimonio.com.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Tribute-A: la party band dei medley per decennio">
+<meta property="og:title" content="Tribute-A · La party band dei medley per decennio">
 <meta property="og:description" content="Due ore senza pause, dagli anni '60 a oggi. Matrimoni ed eventi in Veneto, Lombardia e Trentino.">
 <meta property="og:image" content="https://www.tribute-a.it/share.jpg">
 <meta property="og:image:width" content="1200">
@@ -14,7 +14,7 @@
 <meta property="og:locale" content="it_IT">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="foto/logo-nero.svg" type="image/svg+xml">
-<meta name="theme-color" content="#f5efe7">
+<meta name="theme-color" content="#141419">
 <link rel="canonical" href="https://www.tribute-a.it/">
 <meta property="og:url" content="https://www.tribute-a.it/">
 <script type="application/ld+json">
@@ -222,354 +222,601 @@
  ]
 }
 </script>
-<meta name="site-kind" content="other">
-<meta name="page-type" content="service">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- i font della band: Montserrat Alternates (titoli, come nei listini e nel roll-up) e Montserrat (testi) -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&family=Montserrat:wght@400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/system.css">
-<link rel="stylesheet" href="assets/ui/cards.css">
-<link rel="stylesheet" href="assets/motion/motion.css">
-<link rel="stylesheet" href="assets/backgrounds/backgrounds.css">
-<link rel="stylesheet" href="assets/layout/layout.css">
-<link rel="stylesheet" href="assets/icons/icon.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="foto/apertura-orizzontale-poster.jpg" media="(min-width: 768px)">
+<link rel="preload" as="image" href="foto/apertura-poster.jpg" media="(max-width: 767px)">
 <style>
-/* start.mjs brand con i colori della band (crema, inchiostro, fiamma); fondo inverso = petrolio "notte" delle grafiche 2026 */
+/* ═══ Tribute-A · stile delle grafiche 2026: fumo, grana da pellicola, Montserrat (come i listini) ═══ */
 :root {
-  --p-bg: #f5efe7; --p-surface: #ece3d6; --p-ink: #141419; --p-muted: #5f5a55;
-  --p-accent: #d94c1a; --p-accent-ink: #111111; --p-action: #f08a3c; --p-action-ink: #111111;
-  --p-inv-bg: #0f2127; --p-inv-surface: #15373b; --p-inv-ink: #f5efe7; --p-inv-muted: #a9b9ba;
-  --p-inv-accent: #ea9a57; --p-inv-accent-ink: #111111; --p-inv-action: #f08a3c; --p-inv-action-ink: #111111;
-  --font-display: "Montserrat Alternates", "Montserrat", system-ui, sans-serif;
-  --font-text: "Montserrat", system-ui, sans-serif;
-  --display-weight: 700;
-  --display-tracking: -0.02em;
-  --display-tracking-xl: -0.03em;
+  --inchiostro: #141419; --notte: #0f2127; --petrolio: #15373b; --crema: #f5efe7; --crema-2: #ebe2d4;
+  --arancio: #f08a3c; --fiamma: #d94c1a; --pesca: #ea9a57; --grigio: #5c5752; --nebbia: #a9b5b6;
+  --titoli: "Montserrat Alternates", "Montserrat", system-ui, sans-serif;
+  --testo: "Montserrat", system-ui, -apple-system, sans-serif;
+  --bordo: 24px; --max: 1240px;
+  --sez: clamp(88px, 10vw, 144px);       /* lo stesso spazio sopra e sotto ogni sezione */
+  --testa-h: 76px;
 }
-</style>
-<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
-<script src="assets/backgrounds/backgrounds.js"></script>
-<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
-<link rel="modulepreload" href="assets/moments/moments.js">
-<link rel="modulepreload" href="assets/moments/lib.js">
-<link rel="modulepreload" href="assets/moments/pinned-chapters/moment.js">
-<link rel="modulepreload" href="assets/moments/word-highlight/moment.js">
-<style>
-  .nav__logo img { height: 34px; width: auto; display: block; }
-  /* apertura: video verticale a destra sopra il suo fotogramma sfocato; sul telefono a tutto schermo */
-  .hero--film .hero__sfondo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(26px) brightness(.6) saturate(1.2); transform: scale(1.15); }
-  .hero--film .hero__video { position: absolute; top: 32px; bottom: 32px; right: 48px; left: auto; height: calc(100% - 64px); width: auto; aspect-ratio: 9 / 16;
-    object-fit: cover; border-radius: var(--r-lg); box-shadow: 0 24px 60px -20px rgba(0, 0, 0, .7); }
-  .hero--film .ly-play { display: none; }
-  @media (max-width: 767px) {
-    .hero--film .hero__sfondo { display: none; }
-    .hero--film .hero__video { inset: 0; left: 0; height: 100%; width: 100%; border-radius: 0; box-shadow: none; }
-  }
-  .footer .nav__logo img { height: 56px; }
-  /* le due strade: due foto alte, ognuna un link */
-  .strada { position: relative; display: block; border-radius: var(--r-lg); overflow: hidden; aspect-ratio: 4 / 5; max-height: min(520px, var(--ly-fit)); width: 100%; }
-  .strada img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  .strada__testo { position: absolute; left: 24px; right: 24px; bottom: 24px; background: var(--p-inv-bg); color: var(--p-inv-ink); border-radius: var(--r-md); padding: 20px 22px; }
-  .strada__testo h3 { margin: 0 0 6px; }
-  .strada__testo p { margin: 0; color: var(--p-inv-muted); }
-  .strada__prezzo { display: inline-block; margin-top: 10px; color: var(--p-inv-accent); font-weight: 700; }
-  .form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-  .form__privacy { margin: 8px 0 0; font-size: var(--t-small); color: var(--muted); }
-  @media (max-width: 767px) { .strada { aspect-ratio: 4 / 3; } }
-  /* video: YouTube si carica solo al tocco (niente cookie prima) */
-  .video { position: relative; border-radius: var(--r-lg); overflow: hidden; aspect-ratio: 16 / 9; background: #000; }
-  .video img, .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border: 0; }
-  .video button { position: absolute; inset: 0; width: 100%; background: none; border: 0; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-  .video .ly-play__disc { width: 72px; height: 72px; }
-  .medley { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-4); margin-top: var(--s-5); }
-  .medley .video { aspect-ratio: 16 / 10; border-radius: var(--r-md); }
-  .medley .ly-play__disc { width: 44px; height: 44px; }
-  .medley span.t-small { display: block; margin-top: 8px; font-weight: 600; }
-  @media (max-width: 767px) { .medley { grid-template-columns: 1fr 1fr; } }
-  :focus-visible { outline-color: var(--ink) !important; }
-  .hero--film .hero__over h1 { max-width: 20ch; }
-  @media (min-width: 1024px) { .hero--film .hero__over > :first-child { max-width: 720px; } }
-  .faq--due { display: grid; grid-template-columns: 1fr 1fr; column-gap: var(--s-8); align-items: start; }
-  .faq--due > .faq__item:nth-child(2) { padding-top: 0; }
-  @media (max-width: 899px) { .faq--due { grid-template-columns: 1fr; } .faq--due > .faq__item:nth-child(2) { padding-top: var(--s-5); } }
-  .voto { display: flex; align-items: baseline; gap: var(--s-4); margin-bottom: var(--s-5); }
-  .voto b { font-family: var(--font-display); font-size: 36px; line-height: 1; color: var(--p-accent); }
-  .recensioni__foto { border-radius: var(--r-lg); overflow: hidden; height: min(600px, var(--ly-fit)); }
-  .recensioni__foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  @media (max-width: 1023px) { .recensioni__foto { height: auto; aspect-ratio: 4 / 3; margin-top: var(--s-6); } }
-  .quote blockquote { font-size: var(--t-body); }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--testa-h); -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--inchiostro); color: var(--crema); font: 500 17px/1.6 var(--testo); }
+img, video { display: block; max-width: 100%; }
+a { color: inherit; }
+::selection { background: var(--arancio); color: var(--inchiostro); }
+/* grana sopra tutto, come nelle grafiche (non si tocca: pointer-events none) */
+body::after { content: ""; position: fixed; inset: 0; z-index: 90; pointer-events: none; opacity: .11; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"); }
+.salta { position: absolute; left: -999px; top: 8px; z-index: 100; background: var(--crema); color: var(--inchiostro); padding: 10px 16px; }
+.salta:focus { left: 16px; }
+:focus-visible { outline: 3px solid var(--arancio); outline-offset: 3px; }
+.giro { width: min(var(--max), 100% - 2 * var(--bordo)); margin-inline: auto; }
+
+/* titoli: Montserrat Alternates in maiuscolo, stretti, come sul roll-up */
+h1, h2, h3, .grande { font-family: var(--titoli); font-weight: 800; text-transform: uppercase; letter-spacing: -.01em; line-height: .95; margin: 0; }
+h2 { font-size: clamp(40px, 6.4vw, 92px); }
+h3 { font-size: clamp(22px, 2.2vw, 30px); line-height: 1.05; }
+.etichetta { display: inline-flex; align-items: center; gap: 12px; font: 700 13px/1 var(--testo); letter-spacing: .22em; text-transform: uppercase; color: var(--arancio); margin: 0 0 22px; }
+.etichetta::before { content: ""; width: 34px; height: 2px; background: currentColor; }
+.chiaro .etichetta { color: var(--fiamma); }
+.capo { font-size: clamp(18px, 1.5vw, 21px); line-height: 1.55; max-width: 58ch; margin: 22px 0 0; color: var(--nebbia); }
+.chiaro .capo { color: var(--grigio); }
+.fiamma { color: var(--fiamma); }
+.arancio { color: var(--arancio); }
+
+/* bottoni */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; padding: 0 26px; border: 0; border-radius: 0;
+  font: 700 15px/1 var(--testo); letter-spacing: .06em; text-transform: uppercase; text-decoration: none; cursor: pointer;
+  background: var(--arancio); color: var(--inchiostro); transition: background .2s, transform .15s; }
+.btn:hover { background: var(--pesca); }
+.btn:active { transform: translateY(1px); }
+.btn--vuoto { background: transparent; color: var(--crema); box-shadow: inset 0 0 0 2px rgba(245,239,231,.55); }
+.btn--vuoto:hover { background: rgba(245,239,231,.1); }
+.freccia { width: 18px; height: 18px; transition: transform .2s; }
+a:hover > .freccia { transform: translateX(4px); }
+
+/* ── testata ── */
+.testa { position: fixed; inset: 0 0 auto; z-index: 50; height: var(--testa-h); transition: background .3s, box-shadow .3s; }
+.testa.piena { background: rgba(20,20,25,.92); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(245,239,231,.08); }
+.testa .giro { height: 100%; display: flex; align-items: center; gap: 36px; }
+.logo { flex: none; display: block; }
+.logo img { height: 54px; width: auto; }
+.menu { display: flex; gap: 30px; margin-left: auto; }
+.menu a { font: 600 14px/1 var(--testo); letter-spacing: .08em; text-transform: uppercase; text-decoration: none; opacity: .85; padding: 8px 0; border-bottom: 2px solid transparent; }
+.menu a:hover { opacity: 1; border-color: var(--arancio); }
+.testa .btn { min-height: 46px; padding: 0 20px; font-size: 13px; }
+.panino { display: none; margin-left: auto; width: 48px; height: 48px; background: none; border: 0; color: var(--crema); cursor: pointer; }
+@media (max-width: 980px) {
+  .menu, .testa .btn { display: none; }
+  .panino { display: block; }
+  .testa.aperta { background: var(--inchiostro); height: 100svh; }
+  .testa.aperta .giro { flex-wrap: wrap; align-content: flex-start; padding-top: 11px; }
+  .testa.aperta .menu { display: flex; flex-direction: column; width: 100%; order: 3; gap: 0; margin: 40px 0 0; }
+  .testa.aperta .menu a { font: 800 34px/1.2 var(--titoli); padding: 12px 0; border: 0; }
+  .testa.aperta .btn { display: flex; order: 4; width: 100%; margin-top: 28px; min-height: 58px; font-size: 15px; }
+}
+
+/* ── apertura: video a tutto schermo, testo direttamente sopra ── */
+.apertura { position: relative; min-height: 100svh; display: flex; align-items: flex-end; overflow: hidden; background: var(--inchiostro) url("foto/apertura-orizzontale-poster.jpg") center / cover; }
+.apertura video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.apertura::before { content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg, rgba(20,20,25,.55) 0%, rgba(20,20,25,0) 22%, rgba(20,20,25,0) 45%, rgba(20,20,25,.86) 100%),
+              linear-gradient(90deg, rgba(20,20,25,.55) 0%, rgba(20,20,25,0) 60%); }
+.apertura .giro { position: relative; z-index: 2; padding-bottom: clamp(56px, 9vh, 110px); padding-top: calc(var(--testa-h) + 40px); }
+.apertura h1 { font-size: clamp(46px, 6.4vw, 104px); max-width: 12ch; text-shadow: 0 2px 30px rgba(0,0,0,.35); }
+.apertura .capo { color: var(--crema); max-width: 46ch; text-shadow: 0 1px 12px rgba(0,0,0,.5); }
+.apertura .bottoni { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+.apertura .scendi { position: absolute; right: var(--bordo); bottom: clamp(56px, 9vh, 110px); z-index: 2; writing-mode: vertical-rl; font: 600 12px/1 var(--testo); letter-spacing: .3em; text-transform: uppercase; text-decoration: none; opacity: .7; }
+@media (max-width: 767px) {
+  .apertura { background-image: url("foto/apertura-poster.jpg"); }
+  .apertura::before { background: linear-gradient(180deg, rgba(20,20,25,.45) 0%, rgba(20,20,25,0) 20%, rgba(20,20,25,0) 38%, rgba(20,20,25,.92) 100%); }
+  .apertura h1 { font-size: clamp(38px, 11vw, 58px); }
+  .apertura .capo { font-size: 17px; }
+  .apertura .bottoni .btn { flex: 1 1 100%; }
+  .apertura .scendi { display: none; }
+}
+
+/* ── sezioni: un solo ritmo per tutte ── */
+.sez { position: relative; padding-block: var(--sez); }
+.chiaro { background: var(--crema); color: var(--inchiostro); }
+.scuro { background: var(--inchiostro); }
+.notte { background: var(--notte); }
+.fumo { background: var(--inchiostro) url("foto/fumo-nuvola.jpg") right center / auto 140% no-repeat; }
+.fumo::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--inchiostro) 35%, rgba(20,20,25,.6) 70%, rgba(20,20,25,.35)); }
+.fumo > .giro { position: relative; }
+@media (max-width: 860px) { .fumo { background-position: center bottom; background-size: 160% auto; } .fumo::before { background: linear-gradient(180deg, var(--inchiostro) 55%, rgba(20,20,25,.55)); } }
+.testa-sez { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 32px; margin-bottom: clamp(44px, 5vw, 72px); }
+.testa-sez .capo { margin-top: 0; max-width: 40ch; }
+@media (max-width: 860px) { .testa-sez { grid-template-columns: 1fr; gap: 18px; } }
+
+/* ── numeri ── */
+.numeri { padding-block: 44px; border-bottom: 1px solid rgba(20,20,25,.12); }
+.numeri .giro { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.numeri b { display: block; font: 800 clamp(40px, 5vw, 72px)/1 var(--titoli); color: var(--fiamma); }
+.numeri span { display: block; margin-top: 8px; font-weight: 600; font-size: 15px; color: var(--grigio); }
+@media (max-width: 760px) { .numeri .giro { grid-template-columns: 1fr 1fr; row-gap: 32px; } }
+
+/* ── due strade: due foto alte, la scritta sopra ── */
+.strade { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+.strada { position: relative; min-height: min(86svh, 820px); display: flex; align-items: flex-end; overflow: hidden; text-decoration: none; color: var(--crema); }
+.strada img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.7,.2,1), filter .6s; filter: grayscale(.25) contrast(1.05); }
+.strada:hover img { transform: scale(1.04); filter: none; }
+.strada::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(20,20,25,0) 40%, rgba(20,20,25,.88)); }
+.strada > div { position: relative; z-index: 2; padding: clamp(28px, 4vw, 56px); width: 100%; }
+.strada .grande { font-size: clamp(40px, 5.6vw, 84px); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.strada .grande .freccia { width: clamp(28px, 3vw, 44px); height: auto; flex: none; color: var(--arancio); }
+.strada p { margin: 14px 0 0; max-width: 40ch; color: rgba(245,239,231,.85); }
+@media (max-width: 760px) { .strade { grid-template-columns: 1fr; } .strada { min-height: 72svh; } }
+
+/* ── matrimonio: tre momenti ── */
+.momenti { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 2.4vw, 36px); counter-reset: m; }
+.momenti li { counter-increment: m; }
+.momenti figure { margin: 0 0 22px; aspect-ratio: 4 / 5; overflow: hidden; }
+.momenti img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.08); transition: filter .6s, transform 1s; }
+.momenti li:hover img { filter: grayscale(0); transform: scale(1.03); }
+.momenti h3::before { content: "0" counter(m); display: block; font-size: 15px; letter-spacing: .2em; color: var(--fiamma); margin-bottom: 10px; }
+.momenti p { margin: 12px 0 0; color: var(--grigio); }
+@media (max-width: 860px) { .momenti { grid-template-columns: 1fr; gap: 48px; } .momenti figure { aspect-ratio: 4 / 3; } }
+
+/* ── eventi e locali ── */
+.eventi-griglia { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(32px, 5vw, 80px); align-items: center; }
+.righe { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(245,239,231,.16); }
+.righe li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 20px; padding: 24px 0; border-bottom: 1px solid rgba(245,239,231,.16); }
+.righe h3 { font-size: clamp(22px, 2vw, 28px); }
+.righe p { grid-column: 1; margin: 0; color: var(--nebbia); }
+.righe span { grid-row: 1 / span 2; grid-column: 2; align-self: center; font: 700 13px/1 var(--testo); letter-spacing: .14em; text-transform: uppercase; color: var(--pesca); }
+.collage { position: relative; aspect-ratio: 1 / 1.05; }
+.collage img { position: absolute; object-fit: cover; box-shadow: 0 30px 60px -20px rgba(0,0,0,.7); }
+.collage img:nth-child(1) { inset: 0 18% 22% 0; width: 82%; height: 78%; }
+.collage img:nth-child(2) { right: 0; bottom: 0; width: 52%; height: 52%; outline: 10px solid var(--inchiostro); }
+@media (max-width: 860px) { .eventi-griglia { grid-template-columns: 1fr; } .collage { aspect-ratio: 1 / .9; }
+  .righe li { grid-template-columns: 1fr; } .righe span { grid-row: 1; grid-column: 1; margin-bottom: 4px; } }
+
+/* ── prossimi concerti: come la locandina di un tour ── */
+.concerti { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--crema); }
+.concerto { display: grid; grid-template-columns: 150px minmax(0, 1fr) auto; align-items: center; gap: 28px; padding: 26px 0; border-bottom: 1px solid rgba(245,239,231,.2); }
+.concerto time { font-family: var(--titoli); font-weight: 800; text-transform: uppercase; line-height: .9; }
+.concerto time b { display: block; font-size: 64px; color: var(--arancio); }
+.concerto time span { font-size: 17px; letter-spacing: .08em; }
+.concerto h3 { font-size: clamp(24px, 2.6vw, 38px); }
+.concerto p { margin: 6px 0 0; color: var(--nebbia); font-weight: 600; }
+.concerto .tipo { font: 700 12px/1 var(--testo); letter-spacing: .16em; text-transform: uppercase; padding: 9px 12px; box-shadow: inset 0 0 0 1px rgba(245,239,231,.4); }
+.concerti-vuoto { padding: 34px 0; color: var(--nebbia); font-size: 19px; border-bottom: 1px solid rgba(245,239,231,.2); }
+.concerti-vuoto a { color: var(--arancio); }
+@media (max-width: 640px) { .concerto { grid-template-columns: 92px minmax(0, 1fr); gap: 18px; } .concerto time b { font-size: 46px; } .concerto .tipo { display: none; } }
+
+/* ── lo show: video ── */
+.video { position: relative; aspect-ratio: 16 / 9; background: #000; overflow: hidden; }
+.video img, .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border: 0; transition: transform .8s; }
+.video button { position: absolute; inset: 0; width: 100%; background: linear-gradient(180deg, rgba(20,20,25,0) 50%, rgba(20,20,25,.6)); border: 0; cursor: pointer; color: var(--crema); }
+.video:hover img { transform: scale(1.03); }
+.play { position: absolute; left: 50%; top: 50%; width: 86px; height: 86px; margin: -43px 0 0 -43px; border-radius: 50%; background: var(--arancio); color: var(--inchiostro); display: grid; place-items: center; transition: transform .2s; }
+.play svg { width: 30px; height: 30px; margin-left: 4px; }
+.video:hover .play { transform: scale(1.08); }
+.decenni { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 16px; }
+.decenni .play { width: 52px; height: 52px; margin: -26px 0 0 -26px; }
+.decenni .play svg { width: 18px; height: 18px; }
+.decenni .nome { position: absolute; left: 14px; bottom: 12px; font: 800 18px/1 var(--titoli); text-transform: uppercase; pointer-events: none; }
+@media (max-width: 760px) { .decenni { grid-template-columns: 1fr 1fr; } }
+
+/* ── manifesto ── */
+.manifesto p { font: 800 clamp(34px, 5.2vw, 76px)/1.02 var(--titoli); text-transform: uppercase; margin: 0; max-width: 18ch; }
+.manifesto p em { font-style: normal; color: var(--fiamma); }
+.manifesto small { display: block; margin-top: 28px; font: 600 18px/1.5 var(--testo); color: var(--grigio); max-width: 52ch; }
+
+/* ── recensioni ── */
+.recensioni-griglia { display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
+.voto { position: sticky; top: calc(var(--testa-h) + 24px); }
+.voto b { display: block; font: 800 clamp(96px, 11vw, 160px)/.85 var(--titoli); color: var(--fiamma); }
+.stelle { color: var(--arancio); font-size: 26px; letter-spacing: 4px; margin: 14px 0 8px; }
+.voto p { margin: 0 0 24px; color: var(--grigio); font-weight: 600; }
+.voto a { font-weight: 700; text-decoration: none; border-bottom: 2px solid var(--fiamma); }
+.voci { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.voce { margin: 0; padding: 32px; background: #fff; box-shadow: 0 1px 0 rgba(20,20,25,.08); display: flex; flex-direction: column; }
+.voce:first-child { grid-column: 1 / -1; background: var(--inchiostro); color: var(--crema); }
+.voce:first-child blockquote { font: 800 clamp(24px, 2.6vw, 36px)/1.15 var(--titoli); text-transform: uppercase; }
+.voce .stelle { font-size: 18px; margin: 0 0 16px; }
+.voce h3 { font-size: 20px; margin-bottom: 12px; }
+.voce blockquote { margin: 0; font-size: 18px; line-height: 1.55; flex: 1; }
+.voce figcaption { margin-top: 22px; font-weight: 700; font-size: 14px; letter-spacing: .1em; text-transform: uppercase; color: var(--grigio); }
+.voce:first-child figcaption { color: var(--pesca); }
+.widget-recensioni { margin-top: 28px; }
+@media (max-width: 980px) { .recensioni-griglia { grid-template-columns: 1fr; } .voto { position: static; } }
+@media (max-width: 640px) { .voci { grid-template-columns: 1fr; } .voce { padding: 26px; } }
+
+/* ── domande ── */
+.domande { display: grid; grid-template-columns: 1fr 1fr; gap: 0 clamp(32px, 5vw, 80px); }
+.domande details { border-bottom: 1px solid rgba(20,20,25,.16); }
+.domande summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 24px 0; font: 700 19px/1.3 var(--testo); }
+.domande summary::-webkit-details-marker { display: none; }
+.domande summary::after { content: "+"; font: 700 28px/1 var(--testo); color: var(--fiamma); transition: transform .2s; }
+.domande details[open] summary::after { transform: rotate(45deg); }
+.domande p { margin: 0 0 24px; color: var(--grigio); max-width: 60ch; }
+@media (max-width: 860px) { .domande { grid-template-columns: 1fr; } }
+
+/* ── preventivo ── */
+.preventivo-griglia { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1fr); gap: clamp(36px, 6vw, 96px); align-items: start; }
+.preventivo-griglia .wa { display: inline-flex; align-items: center; gap: 10px; margin-top: 28px; font-weight: 700; text-decoration: none; border-bottom: 2px solid var(--arancio); padding-bottom: 4px; }
+.modulo { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 18px; }
+.campo { display: grid; gap: 8px; }
+.campo--largo { grid-column: 1 / -1; }
+.campo label { font: 700 12px/1 var(--testo); letter-spacing: .16em; text-transform: uppercase; color: var(--nebbia); }
+.campo input, .campo select, .campo textarea { width: 100%; font: 500 17px/1.4 var(--testo); color: var(--crema); background: rgba(245,239,231,.06);
+  border: 0; border-bottom: 2px solid rgba(245,239,231,.35); border-radius: 0; padding: 14px 14px; min-height: 54px; }
+.campo select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--arancio) 50%), linear-gradient(135deg, var(--arancio) 50%, transparent 50%);
+  background-position: calc(100% - 20px) 24px, calc(100% - 14px) 24px; background-size: 6px 6px; background-repeat: no-repeat; }
+.campo select option { color: var(--inchiostro); }
+.campo input:focus, .campo select:focus, .campo textarea:focus { outline: 0; border-color: var(--arancio); background-color: rgba(245,239,231,.1); }
+.campo [aria-invalid="true"] { border-color: var(--fiamma); }
+.campo .errore { margin: 0; color: var(--pesca); font-size: 14px; font-weight: 600; }
+.campo textarea { min-height: 110px; resize: vertical; }
+.campo input[type="date"] { color-scheme: dark; }
+.modulo .btn { grid-column: 1 / -1; min-height: 60px; font-size: 16px; }
+.modulo .stato { grid-column: 1 / -1; margin: 0; min-height: 1.6em; font-weight: 600; color: var(--pesca); }
+.modulo .privacy { grid-column: 1 / -1; margin: 0; font-size: 14px; color: var(--nebbia); }
+.trappola { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+@media (max-width: 860px) { .preventivo-griglia { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .modulo { grid-template-columns: 1fr; } }
+
+/* ── piede ── */
+.piede { background: var(--inchiostro); padding: clamp(64px, 8vw, 104px) 0 calc(36px + env(safe-area-inset-bottom)); border-top: 1px solid rgba(245,239,231,.1); }
+.piede .giro { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; }
+.piede img { height: 110px; width: auto; }
+.piede h3 { font-size: 15px; letter-spacing: .14em; color: var(--arancio); margin-bottom: 16px; }
+.piede ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.piede a { text-decoration: none; opacity: .85; }
+.piede a:hover { opacity: 1; color: var(--arancio); }
+.piede p { color: var(--nebbia); margin: 18px 0 0; max-width: 32ch; }
+.legale { grid-column: 1 / -1; padding-top: 28px; margin-top: 12px; border-top: 1px solid rgba(245,239,231,.1); font-size: 14px; color: var(--nebbia); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+@media (max-width: 860px) { .piede .giro { grid-template-columns: 1fr 1fr; } .piede .giro > :first-child { grid-column: 1 / -1; } }
+
+/* barra in basso sul telefono: sempre a portata di pollice */
+.barra-tel { display: none; }
+@media (max-width: 767px) {
+  .barra-tel { display: grid; grid-template-columns: 1fr auto; gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgba(20,20,25,.94); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+    transform: translateY(110%); transition: transform .3s; }
+  .barra-tel.su { transform: none; }
+  .barra-tel .btn { min-height: 52px; padding: 0 14px; font-size: 13px; white-space: nowrap; }
+  .barra-tel .btn--vuoto { padding: 0 18px; }
+  .piede { padding-bottom: calc(110px + env(safe-area-inset-bottom)); }
+}
+
+/* entrata leggera di titoli e foto (niente se la persona ha chiesto meno movimento) */
+@media (prefers-reduced-motion: no-preference) {
+  .js .entra { opacity: 0; transform: translateY(28px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+  .js .entra.vista { opacity: 1; transform: none; }
+  .apertura h1, .apertura .capo, .apertura .bottoni { animation: su 1s cubic-bezier(.2,.7,.2,1) both; }
+  .apertura .capo { animation-delay: .15s; } .apertura .bottoni { animation-delay: .3s; }
+  @keyframes su { from { opacity: 0; transform: translateY(30px); } }
+}
 </style>
 </head>
 <body>
-<!-- type: service (persone che si ingaggiano: una band per matrimoni ed eventi)
-     deal: hero film, nav nav-centre, close close-photo, footer footer-columns, rhythm surface-pairs, buttons block,
-     mark: il logo della band (sostituisce arc), grounds: none
-     palette: i colori della band (start.mjs brand): crema, inchiostro, fiamma; fondo inverso petrolio delle grafiche 2026
-     moments: pinned-chapters (#matrimonio: cerimonia, party band, DJ set), word-highlight (#nonne) -->
+<a class="salta" href="#contenuto">Vai al contenuto</a>
 
-<header class="nav nav--centre">
-  <div class="wrap nav__bar">
-    <a class="skip-link" href="#top">Vai al contenuto</a>
-    <a class="nav__logo" href="#top" aria-label="Tribute-A"><img src="foto/logo-nero.svg" alt="Tribute-A"></a>
-    <nav class="nav__links" aria-label="Menu principale">
-      <div class="nav__item"><a class="nav__link" href="#matrimonio">Matrimoni</a></div>
-      <div class="nav__item"><a class="nav__link" href="#eventi">Eventi e locali</a></div>
-      <div class="nav__item"><a class="nav__link" href="#show">Lo show</a></div>
-      <div class="nav__item"><a class="nav__link" href="#recensioni">Recensioni</a></div>
+<header class="testa" id="testa">
+  <div class="giro">
+    <a class="logo" href="#top" aria-label="Tribute-A, torna su"><img src="foto/logo-bianco.svg" alt="Tribute-A" width="44" height="54"></a>
+    <nav class="menu" aria-label="Menu principale">
+      <a href="#matrimonio">Matrimoni</a>
+      <a href="#eventi">Eventi e locali</a>
+      <a href="#concerti">Concerti</a>
+      <a href="#show">Lo show</a>
+      <a href="#recensioni">Recensioni</a>
     </nav>
-    <div class="nav__actions">
-      <a class="btn btn--primary" href="#preventivo">Chiedi un preventivo</a>
-    </div>
-    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+    <a class="btn" href="#preventivo">Chiedi un preventivo</a>
+    <button class="panino" type="button" aria-expanded="false" aria-controls="testa" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M3 8h18M3 16h18" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+    </button>
   </div>
 </header>
 
 <main id="top">
-  <section class="hero hero--film" data-enter aria-labelledby="hero-h">
-    <div class="wrap"><div class="hero-text hero__in">
-      <div class="hero__media hero__fill">
-        <!-- il video verticale della sponsorizzata (18 s, muto, in loop): sul telefono a tutto schermo, sul computer in verticale
-             a destra sopra lo stesso fotogramma sfocato -->
-        <img class="hero__sfondo" src="foto/apertura-poster.jpg" alt="" aria-hidden="true" fetchpriority="high">
-        <video class="hero__video" src="foto/apertura.mp4" poster="foto/apertura-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="La band suona sul palco, il pubblico balla con le mani alzate"></video>
-        <div class="hero__over">
-          <div>
-            <h1 id="hero-h">La party band per matrimoni ed eventi</h1>
-            <p class="hero__lead">Tre musicisti, due ore di medley dagli anni '60 a oggi, senza pause. 20 matrimoni e oltre 90 serate in due stagioni, tra Veneto, Lombardia e Trentino.</p>
-            <div class="btn-row"><a class="btn btn--primary" href="#preventivo">Chiedi un preventivo</a><a class="btn btn--secondary" href="#strade">Scegli la tua festa</a></div>
-          </div>
-          <a class="ly-play" href="#show">
-            <span class="ly-play__disc"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 2.6v12.8c0 .8.9 1.3 1.6.9l10.3-6.4c.6-.4.6-1.3 0-1.7L6.1 1.7c-.7-.4-1.6.1-1.6.9Z" fill="currentColor"/></svg></span>
-            <span class="ly-play__label">Guarda lo show<small>Il promo 2026</small></span>
-          </a>
-        </div>
+  <!-- Apertura: sul computer il promo orizzontale (15 s dal "promo agency"), sul telefono il video verticale della sponsorizzata.
+       Lo script sceglie quale caricare, così il telefono non scarica quello grande. Muti, in loop. -->
+  <section class="apertura" aria-labelledby="titolo">
+    <video id="video-apertura" muted autoplay loop playsinline preload="metadata" aria-hidden="true"
+      data-orizzontale="foto/apertura-orizzontale.mp4" data-poster-orizzontale="foto/apertura-orizzontale-poster.jpg"
+      data-verticale="foto/apertura.mp4" data-poster-verticale="foto/apertura-poster.jpg"></video>
+    <div class="giro" id="contenuto">
+      <p class="etichetta">Party band · Verona</p>
+      <h1 id="titolo">La party band per matrimoni ed eventi</h1>
+      <p class="capo">Tre musicisti, due ore di medley dagli anni '60 a oggi, senza mai fermarsi. In Veneto, sul Garda, in Lombardia e in Trentino.</p>
+      <div class="bottoni">
+        <a class="btn" href="#preventivo">Chiedi un preventivo <svg class="freccia" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></a>
+        <a class="btn btn--vuoto" href="#show">Guarda lo show</a>
       </div>
-    </div></div>
+    </div>
+    <a class="scendi" href="#numeri" aria-label="Scorri giù">Scorri</a>
   </section>
 
-  <section class="section" id="strade" aria-labelledby="strade-h">
-    <div class="wrap">
-      <div class="section-head"><h2 id="strade-h">Due feste, due spettacoli. <span class="muted">Scegli la tua.</span></h2></div>
-      <div class="grid">
-        <a class="strada span-6" href="#matrimonio">
-          <img src="foto/t3.jpg" alt="Il cantante con il basso rosso tra le fontane di luce, in una sala per matrimoni" loading="lazy">
-          <span class="strada__testo"><h3>💍 Il matrimonio</h3><p>Dalla cerimonia all'ultimo ballo, con il vostro primo ballo dal vivo.</p></span>
-        </a>
-        <a class="strada span-6" href="#eventi">
-          <img src="foto/t10bw.jpg" alt="I Tribute-A sul palco sotto le luci verdi, chitarra e basso" loading="lazy">
-          <span class="strada__testo"><h3>🎉 Eventi e locali</h3><p>Locali, sagre, feste private e aziende: due ore che riempiono la pista.</p></span>
-        </a>
-      </div>
+  <!-- Numeri veri dal gestionale (stagioni 2025-2026) e da Matrimonio.com -->
+  <section class="numeri chiaro" id="numeri" aria-label="I Tribute-A in numeri">
+    <div class="giro">
+      <div><b>90+</b><span>serate dal vivo in due stagioni</span></div>
+      <div><b>20</b><span>matrimoni nel 2025-2026</span></div>
+      <div><b>5,0</b><span>su Matrimonio.com</span></div>
+      <div><b>3.218</b><span>corde rotte</span></div>
     </div>
   </section>
 
-  <section class="section" id="matrimonio" style="--h: 2" data-moment="pinned-chapters" aria-labelledby="matrimonio-h">
-    <div class="wrap mo-pc__grid">
-      <div class="mo-pc__text">
-        <h2 id="matrimonio-h">Il vostro matrimonio, momento per momento</h2>
-        <ol class="mo-pc__steps">
-          <li class="mo-pc__step">
-            <h3>Cerimonia e aperitivo in acustico</h3>
-            <p>Voce e chitarra per l'ingresso, gli anelli e il brindisi. Ci preparate i brani, noi li cuciamo sui vostri momenti.</p>
-            <figure class="mo-pc__visual"><img src="foto/img134.jpg" alt="I Tribute-A in studio con chitarra e basso, il batterista seduto con il rullante" width="1066" height="1600"></figure>
-          </li>
-          <li class="mo-pc__step">
-            <h3>La party band, due ore senza pause</h3>
-            <p>Un medley da quindici minuti per ogni decennio: dagli anni '60 alle hit di oggi, con il vostro primo ballo dal vivo.</p>
-            <figure class="mo-pc__visual"><img src="foto/sogno0740.jpg" alt="I Tribute-A dal vivo sotto luci rosse e blu" width="1600" height="1067"></figure>
-          </li>
-          <li class="mo-pc__step">
-            <h3>DJ set fino a tardi</h3>
-            <p>Quando la band chiude, la musica continua: DJ set su richiesta, con le luci e l'impianto che sono già lì.</p>
-            <figure class="mo-pc__visual"><img src="foto/t6bw.jpg" alt="Il pubblico balla sotto il palco con le mani alzate" width="1600" height="1067"></figure>
-          </li>
-        </ol>
+  <nav class="strade" aria-label="Scegli la tua festa">
+    <a class="strada" href="#matrimonio">
+      <img src="foto/t3.jpg" alt="Il cantante con il basso rosso tra le fontane di luce, in una sala per matrimoni" loading="lazy">
+      <div><span class="grande">Matrimoni <svg class="freccia" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></span>
+        <p>Dalla cerimonia all'ultimo ballo, con il vostro primo ballo dal vivo.</p></div>
+    </a>
+    <a class="strada" href="#eventi">
+      <img src="foto/t10bw.jpg" alt="I Tribute-A sul palco sotto le luci verdi, chitarra e basso" loading="lazy">
+      <div><span class="grande">Eventi e locali <svg class="freccia" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></span>
+        <p>Locali, sagre, feste private e aziende: due ore che riempiono la pista.</p></div>
+    </a>
+  </nav>
+
+  <section class="sez chiaro" id="matrimonio" aria-labelledby="matrimonio-h">
+    <div class="giro">
+      <div class="testa-sez entra">
+        <div><p class="etichetta">Matrimoni</p><h2 id="matrimonio-h">Dal sì<br>all'ultimo <span class="fiamma">ballo</span></h2></div>
+        <p class="capo">Ci occupiamo della musica di tutta la giornata, così voi pensate solo a godervela.</p>
       </div>
-      <div class="mo-pc__visuals frame"></div>
+      <ol class="momenti">
+        <li class="entra"><figure><img src="foto/img134.jpg" alt="I Tribute-A in studio con chitarra e basso" loading="lazy"></figure>
+          <h3>Cerimonia e aperitivo in acustico</h3><p>Voce e chitarra per l'ingresso, gli anelli e il brindisi. Scegliete i brani, noi li cuciamo sui vostri momenti.</p></li>
+        <li class="entra"><figure><img src="foto/sogno0740.jpg" alt="I Tribute-A dal vivo sotto luci rosse e blu" loading="lazy"></figure>
+          <h3>Due ore di party, senza pause</h3><p>Un medley da quindici minuti per ogni decennio, dagli anni '60 alle hit di oggi. E il vostro primo ballo, dal vivo.</p></li>
+        <li class="entra"><figure><img src="foto/t6bw.jpg" alt="Il pubblico balla sotto il palco con le mani alzate" loading="lazy"></figure>
+          <h3>DJ set fino a tardi</h3><p>Quando la band chiude, la festa continua: DJ set su richiesta, con le luci e l'impianto che sono già lì.</p></li>
+      </ol>
     </div>
   </section>
 
-  <section class="section" id="eventi" style="--hm: 2" aria-labelledby="eventi-h">
-    <div class="wrap">
-      <div class="section-head"><h2 id="eventi-h">Eventi e locali. <span class="muted">Lo stesso show, dove volete voi.</span></h2></div>
-      <div class="grid grid--top fill" data-peek>
-        <ul class="rows span-6">
-          <li data-peek-to="locali" tabindex="0"><span class="rows__name">Locali e pub</span><p>Due ore di show, anche con l'impianto del locale.</p><span class="rows__value">2 ore</span></li>
-          <li data-peek-to="sagre" tabindex="0"><span class="rows__name">Sagre e piazze</span><p>Impianto per spazi grandi e all'aperto, palco da 4x3 m.</p><span class="rows__value">All'aperto</span></li>
-          <li data-peek-to="feste" tabindex="0"><span class="rows__name">Feste private</span><p>Compleanni, anniversari, il giardino di casa o un veliero sul lago.</p><span class="rows__value">Su misura</span></li>
-          <li data-peek-to="aziende" tabindex="0"><span class="rows__name">Aziende e Capodanno</span><p>Cene aziendali, fiere e la notte di San Silvestro in piazza.</p><span class="rows__value">Tutto l'anno</span></li>
+  <section class="sez fumo" id="eventi" aria-labelledby="eventi-h">
+    <div class="giro eventi-griglia">
+      <div class="entra">
+        <p class="etichetta">Eventi e locali</p>
+        <h2 id="eventi-h">Lo stesso show, <span class="arancio">dove volete voi</span></h2>
+        <ul class="righe" style="margin-top: 48px">
+          <li><h3>Locali e pub</h3><p>Due ore di show, anche con l'impianto del locale.</p><span>2 ore</span></li>
+          <li><h3>Sagre e piazze</h3><p>Impianto per spazi grandi e all'aperto, palco da 4x3 m.</p><span>All'aperto</span></li>
+          <li><h3>Feste private</h3><p>Compleanni, anniversari, il giardino di casa o un veliero sul lago.</p><span>Su misura</span></li>
+          <li><h3>Aziende e Capodanno</h3><p>Cene aziendali, fiere e la notte di San Silvestro in piazza.</p><span>Tutto l'anno</span></li>
         </ul>
-        <div class="frame frame--photo frame--fill span-6 start-7">
-          <img class="frame__img" data-peek-for="locali" src="foto/t1.jpg" alt="Chitarrista e bassista dal vivo sotto le luci blu" loading="lazy">
-          <img class="frame__img" data-peek-for="sagre" src="foto/t5bw.jpg" alt="Il cantante e il chitarrista dal vivo, in bianco e nero" hidden>
-          <img class="frame__img" data-peek-for="feste" src="foto/img163.jpg" alt="I tre Tribute-A suonano dei flauti per gioco" hidden>
-          <img class="frame__img" data-peek-for="aziende" src="foto/t7bw.jpg" alt="Il chitarrista dal vivo con il bandana, in bianco e nero" hidden>
-        </div>
+      </div>
+      <div class="collage entra" aria-hidden="true">
+        <img src="foto/t1.jpg" alt="" loading="lazy">
+        <img src="foto/t5bw.jpg" alt="" loading="lazy">
       </div>
     </div>
   </section>
 
-  <section class="section ground-surface" id="show" aria-labelledby="show-h">
-    <div class="wrap">
-      <div class="section-head"><h2 id="show-h">Lo show in un minuto. <span class="muted">E un assaggio di ogni decennio.</span></h2></div>
-      <div class="video" data-yt="owRiOEl0Fng">
+  <!-- Prossimi concerti: arrivano dal gestionale (solo locali e sagre confermati, mai matrimoni o feste private) -->
+  <section class="sez notte" id="concerti" aria-labelledby="concerti-h">
+    <div class="giro">
+      <div class="testa-sez entra">
+        <div><p class="etichetta">Dal vivo</p><h2 id="concerti-h">Prossimi concerti</h2></div>
+        <p class="capo">Le date aperte a tutti: locali, sagre e piazze. Venite a ballare.</p>
+      </div>
+      <ol class="concerti" id="lista-concerti" aria-live="polite">
+        <li class="concerti-vuoto">Carico le prossime date…</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sez scuro" id="show" aria-labelledby="show-h">
+    <div class="giro">
+      <div class="testa-sez entra">
+        <div><p class="etichetta">Lo show</p><h2 id="show-h">Sette decenni,<br>una festa sola</h2></div>
+        <p class="capo">Il promo 2026 in un minuto, e un assaggio di ogni decennio.</p>
+      </div>
+      <div class="video entra" data-yt="owRiOEl0Fng">
         <img src="foto/yt-owRiOEl0Fng-hd.jpg" alt="Il bassista dei Tribute-A canta sul palco con le luci azzurre" loading="lazy">
-        <button type="button" aria-label="Guarda il video promo 2026"><span class="ly-play__disc"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 2.6v12.8c0 .8.9 1.3 1.6.9l10.3-6.4c.6-.4.6-1.3 0-1.7L6.1 1.7c-.7-.4-1.6.1-1.6.9Z" fill="currentColor"/></svg></span></button>
+        <button type="button" aria-label="Guarda il promo 2026"><span class="play"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 2.6v12.8c0 .8.9 1.3 1.6.9l10.3-6.4c.6-.4.6-1.3 0-1.7L6.1 1.7c-.7-.4-1.6.1-1.6.9Z" fill="currentColor"/></svg></span></button>
       </div>
-      <div class="medley">
-        <div><div class="video" data-yt="jSZ9WRwGMBo"><img src="foto/yt-jSZ9WRwGMBo.jpg" alt="Il pubblico sotto il palco durante il medley anni Ottanta" loading="lazy"><button type="button" aria-label="Guarda il medley anni Ottanta"><span class="ly-play__disc"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 2.6v12.8c0 .8.9 1.3 1.6.9l10.3-6.4c.6-.4.6-1.3 0-1.7L6.1 1.7c-.7-.4-1.6.1-1.6.9Z" fill="currentColor"/></svg></span></button></div><span class="t-small">Anni '80</span></div>
-        <div><div class="video" data-yt="stVX_GeU7zY"><img src="foto/yt-stVX_GeU7zY.jpg" alt="Il cantante sul palco durante il medley anni Novanta" loading="lazy"><button type="button" aria-label="Guarda il medley anni Novanta"><span class="ly-play__disc"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 2.6v12.8c0 .8.9 1.3 1.6.9l10.3-6.4c.6-.4.6-1.3 0-1.7L6.1 1.7c-.7-.4-1.6.1-1.6.9Z" fill="currentColor"/></svg></span></button></div><span class="t-small">Anni '90</span></div>
-        <div><div class="video" data-yt="hgJKWN8qOUQ"><img src="foto/yt-hgJKWN8qOUQ.jpg" alt="La band sul palco durante il medley anni Duemila" loading="lazy"><button type="button" aria-label="Guarda il medley anni Duemila"><span class="ly-play__disc"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 2.6v12.8c0 .8.9 1.3 1.6.9l10.3-6.4c.6-.4.6-1.3 0-1.7L6.1 1.7c-.7-.4-1.6.1-1.6.9Z" fill="currentColor"/></svg></span></button></div><span class="t-small">Anni 2000</span></div>
-        <div><div class="video" data-yt="vHmlLgDTvuA"><img src="foto/yt-vHmlLgDTvuA.jpg" alt="La band sul palco durante il medley anni Duemiladieci" loading="lazy"><button type="button" aria-label="Guarda il medley anni Duemiladieci"><span class="ly-play__disc"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 2.6v12.8c0 .8.9 1.3 1.6.9l10.3-6.4c.6-.4.6-1.3 0-1.7L6.1 1.7c-.7-.4-1.6.1-1.6.9Z" fill="currentColor"/></svg></span></button></div><span class="t-small">Anni 2010</span></div>
+      <div class="decenni">
+        <div class="video" data-yt="jSZ9WRwGMBo"><img src="foto/yt-jSZ9WRwGMBo.jpg" alt="" loading="lazy"><button type="button" aria-label="Guarda il medley anni Ottanta"><span class="play"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 2.6v12.8c0 .8.9 1.3 1.6.9l10.3-6.4c.6-.4.6-1.3 0-1.7L6.1 1.7c-.7-.4-1.6.1-1.6.9Z" fill="currentColor"/></svg></span></button><span class="nome">Anni '80</span></div>
+        <div class="video" data-yt="stVX_GeU7zY"><img src="foto/yt-stVX_GeU7zY.jpg" alt="" loading="lazy"><button type="button" aria-label="Guarda il medley anni Novanta"><span class="play"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 2.6v12.8c0 .8.9 1.3 1.6.9l10.3-6.4c.6-.4.6-1.3 0-1.7L6.1 1.7c-.7-.4-1.6.1-1.6.9Z" fill="currentColor"/></svg></span></button><span class="nome">Anni '90</span></div>
+        <div class="video" data-yt="hgJKWN8qOUQ"><img src="foto/yt-hgJKWN8qOUQ.jpg" alt="" loading="lazy"><button type="button" aria-label="Guarda il medley anni Duemila"><span class="play"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 2.6v12.8c0 .8.9 1.3 1.6.9l10.3-6.4c.6-.4.6-1.3 0-1.7L6.1 1.7c-.7-.4-1.6.1-1.6.9Z" fill="currentColor"/></svg></span></button><span class="nome">Anni 2000</span></div>
+        <div class="video" data-yt="vHmlLgDTvuA"><img src="foto/yt-vHmlLgDTvuA.jpg" alt="" loading="lazy"><button type="button" aria-label="Guarda il medley anni Duemiladieci"><span class="play"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 2.6v12.8c0 .8.9 1.3 1.6.9l10.3-6.4c.6-.4.6-1.3 0-1.7L6.1 1.7c-.7-.4-1.6.1-1.6.9Z" fill="currentColor"/></svg></span></button><span class="nome">Anni 2010</span></div>
       </div>
     </div>
   </section>
 
-  <section class="section statement" id="nonne" data-moment="word-highlight" aria-label="Il nostro modo di suonare">
-    <div class="wrap">
-      <p class="t-label">Come suoniamo</p>
-      <p class="mo-wh__text">Ogni decennio è un blocco da quindici minuti, un pezzo dentro l'altro, senza fermarsi. Giochiamo con il pubblico e lo portiamo in pista. Se non ballano anche <strong>le nonne</strong>, non siamo contenti.</p>
+  <section class="sez chiaro manifesto" aria-label="Come suoniamo">
+    <div class="giro entra">
+      <p class="etichetta">Come suoniamo</p>
+      <p>Se non ballano anche <em>le nonne</em>, non siamo contenti.</p>
+      <small>Ogni decennio è un blocco da quindici minuti, un pezzo dentro l'altro, senza fermarsi. Giochiamo con il pubblico e lo portiamo in pista.</small>
     </div>
   </section>
 
-  <section class="section" id="recensioni" aria-labelledby="recensioni-h">
-    <div class="wrap grid grid--top">
-      <div class="span-6">
-        <div class="section-head"><h2 id="recensioni-h">Le coppie su Matrimonio.com</h2></div>
-        <div class="voto"><b>5,0</b><span>su 5, da 6 recensioni. Consigliati dal 100% delle coppie.</span></div>
-        <div class="stack-5">
-          <figure class="quote"><blockquote>Hanno un'energia contagiosa che fa ballare chiunque, persino le zie settantenni. Avremmo voluto che non smetteste mai di suonare.</blockquote><figcaption class="person"><span><span class="person__name">Federica</span><span class="person__role">Matrimonio, giugno 2026</span></span></figcaption></figure>
-          <figure class="quote"><blockquote>Grazie ai medley la serata è stata super dinamica e ha fatto ballare tutti, persino le nonne.</blockquote><figcaption class="person"><span><span class="person__name">Nicola</span><span class="person__role">Matrimonio, febbraio 2026</span></span></figcaption></figure>
+  <section class="sez chiaro" id="recensioni" aria-labelledby="recensioni-h" style="padding-top: 0">
+    <div class="giro recensioni-griglia">
+      <div class="voto entra">
+        <p class="etichetta">Recensioni</p>
+        <h2 id="recensioni-h" class="visivamente-nascosto" style="position:absolute;left:-9999px">Recensioni su Matrimonio.com</h2>
+        <b>5,0</b>
+        <div class="stelle" aria-label="5 stelle su 5">★★★★★</div>
+        <p>6 recensioni su Matrimonio.com.<br>Consigliati dal 100% delle coppie.</p>
+        <a href="https://www.matrimonio.com/musica-matrimonio/tribute-a--e424261/opinioni" target="_blank" rel="noopener">Leggile tutte</a>
+      </div>
+      <div>
+        <div class="voci">
+          <figure class="voce entra"><div class="stelle" aria-hidden="true">★★★★★</div>
+            <blockquote>"Hanno un'energia contagiosa che fa ballare chiunque, persino le zie settantenni."</blockquote>
+            <figcaption>Federica · matrimonio, giugno 2026</figcaption></figure>
+          <figure class="voce entra"><div class="stelle" aria-hidden="true">★★★★★</div><h3>Si accende la festa</h3>
+            <blockquote>"La festa è decollata grazie alla loro energia travolgente e alla loro simpatia. Sono riusciti a far ballare e cantare davvero tutti gli invitati."</blockquote>
+            <figcaption>Giulia · matrimonio</figcaption></figure>
+          <figure class="voce entra"><div class="stelle" aria-hidden="true">★★★★★</div><h3>Divertimento assicurato</h3>
+            <blockquote>"Grazie ai medley la serata è stata super dinamica e ha fatto ballare tutti, persino le nonne."</blockquote>
+            <figcaption>Nicola · matrimonio, febbraio 2026</figcaption></figure>
         </div>
-        <p><a class="link" href="https://www.matrimonio.com/musica-matrimonio/tribute-a--e424261/opinioni">Leggi tutte le recensioni</a></p>
-      </div>
-      <div class="recensioni__foto span-6 start-7"><img src="foto/img125.jpg" alt="I tre Tribute-A saltano in aria con chitarra, rullante e basso" loading="lazy"></div>
-    </div>
-  </section>
-
-  <section class="section" id="domande" aria-labelledby="domande-h">
-    <div class="wrap">
-      <div class="section-head"><h2 id="domande-h">Le domande che ci fate</h2></div>
-      <div class="faq faq--due">
-        <div class="faq__item"><h3>In che zone suonate?</h3><p>Siamo di Verona: suoniamo in tutto il Veneto, sul Lago di Garda, in Lombardia e in Trentino. Per le date più lontane chiedeteci pure.</p></div>
-        <div class="faq__item"><h3>Che musica suonate?</h3><p>Le hit che fanno ballare tutti, dagli anni '60 a oggi: pop, rock e dance italiani e internazionali, in medley per decennio. Le vostre canzoni del cuore le aggiungiamo volentieri.</p></div>
-        <div class="faq__item"><h3>Quanto dura lo show?</h3><p>Due ore di live, in blocchi da circa quindici minuti per decennio. Prima, se volete, la cerimonia e l'aperitivo in acustico; dopo, il DJ set.</p></div>
-        <div class="faq__item"><h3>Portate voi l'impianto?</h3><p>Sì: audio e luci sono nei pacchetti, con il fonico in quelli più completi. Nei locali possiamo usare anche l'impianto di casa.</p></div>
-        <div class="faq__item"><h3>Che spazio vi serve?</h3><p>Un palco di almeno 4x3 metri, corrente a 220V con due o tre prese, un riparo se si suona all'aperto e un posto dove cambiarci.</p></div>
-        <div class="faq__item"><h3>Quanto prima arrivate?</h3><p>Da una a due ore prima, per montare e fare il soundcheck. Ci serve un parcheggio o una zona di carico vicino all'ingresso.</p></div>
-        <div class="faq__item"><h3>E la SIAE?</h3><p>I permessi SIAE sono a carico di chi organizza: vi diciamo noi cosa serve e quando farli.</p></div>
+        <!-- Qui va il codice del widget di Matrimonio.com, quando Marco lo manda -->
+        <div class="widget-recensioni" id="widget-recensioni"></div>
       </div>
     </div>
   </section>
 
-  <section class="section ground-surface" id="preventivo" aria-labelledby="preventivo-h">
-    <div class="wrap grid grid--top">
-      <div class="span-5">
-        <div class="section-head"><h2 id="preventivo-h">Chiedi un preventivo</h2><p>La data, il posto e che festa è: vi rispondiamo con la disponibilità e il preventivo, di solito entro un giorno.</p></div>
-        <p><a class="link" href="https://wa.me/393404193501">Preferite WhatsApp? Scriveteci lì</a></p>
+  <section class="sez chiaro" id="domande" aria-labelledby="domande-h" style="background: var(--crema-2)">
+    <div class="giro">
+      <div class="testa-sez entra"><div><p class="etichetta">Domande</p><h2 id="domande-h">Prima di chiamarci</h2></div></div>
+      <div class="domande">
+        <div>
+          <details><summary>In che zone suonate?</summary><p>Siamo di Verona: suoniamo in tutto il Veneto, sul Lago di Garda, in Lombardia e in Trentino. Per le date più lontane chiedeteci pure.</p></details>
+          <details><summary>Che musica suonate?</summary><p>Le hit che fanno ballare tutti, dagli anni '60 a oggi: pop, rock e dance italiani e internazionali, in medley per decennio. Le vostre canzoni del cuore le aggiungiamo volentieri.</p></details>
+          <details><summary>Quanto dura lo show?</summary><p>Due ore di live, in blocchi da circa quindici minuti per decennio. Prima, se volete, la cerimonia e l'aperitivo in acustico; dopo, il DJ set.</p></details>
+          <details><summary>Portate voi l'impianto?</summary><p>Sì: audio e luci sono nei pacchetti, con il fonico in quelli più completi. Nei locali possiamo usare anche l'impianto di casa.</p></details>
+        </div>
+        <div>
+          <details><summary>Che spazio vi serve?</summary><p>Un palco di almeno 4x3 metri, corrente a 220V con due o tre prese, un riparo se si suona all'aperto e un posto dove cambiarci.</p></details>
+          <details><summary>Quanto prima arrivate?</summary><p>Da una a due ore prima, per montare e fare il soundcheck. Ci serve un parcheggio o una zona di carico vicino all'ingresso.</p></details>
+          <details><summary>E la SIAE?</summary><p>I permessi SIAE sono a carico di chi organizza: vi diciamo noi cosa serve e quando farli.</p></details>
+        </div>
       </div>
-      <form class="form span-6 start-7" id="modulo" data-endpoint="" novalidate data-fix="{n} campi da sistemare.">
-        <div class="field"><label for="f-nome">Nome</label>
-          <input id="f-nome" name="nome" type="text" autocomplete="name" required aria-describedby="f-nome-err">
-          <p class="field__error" id="f-nome-err" hidden>Scrivi il tuo nome, o i nomi degli sposi.</p></div>
-        <div class="field"><label for="f-tel">Telefono</label>
-          <input id="f-tel" name="telefono" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="f-tel-err">
-          <p class="field__error" id="f-tel-err" hidden>Scrivi un numero a cui richiamarti.</p></div>
-        <div class="field"><label for="f-data">Data della festa</label>
-          <input id="f-data" name="data" type="date" required aria-describedby="f-data-err">
-          <p class="field__error" id="f-data-err" hidden>Scegli il giorno della festa.</p></div>
-        <div class="field"><label for="f-tipo">Che festa è</label>
-          <select id="f-tipo" name="tipo"><option>Matrimonio</option><option>Festa privata</option><option>Locale o pub</option><option>Sagra o piazza</option><option>Azienda</option></select></div>
-        <div class="field"><label for="f-dove">Dove</label>
-          <input id="f-dove" name="dove" type="text" autocomplete="off" required aria-describedby="f-dove-err">
-          <p class="field__error" id="f-dove-err" hidden>Scrivi la location o il paese.</p></div>
-        <div class="field"><label for="f-email">Email (facoltativa)</label>
-          <input id="f-email" name="email" type="email" autocomplete="email"></div>
-        <div class="field"><label for="f-msg">Qualcosa da dirci? (facoltativo)</label>
-          <textarea id="f-msg" name="messaggio" rows="3" maxlength="1000"></textarea></div>
-        <div class="hp" aria-hidden="true"><label for="f-sito">Non compilare</label><input id="f-sito" name="sito" type="text" tabindex="-1" autocomplete="off"></div>
-        <div class="btn-row"><button class="btn btn--primary" type="submit">Chiedi un preventivo</button></div>
-        <p class="form__status" role="status" data-form-status></p>
-        <p class="form__privacy">Usiamo i vostri dati solo per rispondervi. <a class="link" href="privacy.html">Privacy</a></p>
+    </div>
+  </section>
+
+  <section class="sez fumo" id="preventivo" aria-labelledby="preventivo-h">
+    <div class="giro preventivo-griglia">
+      <div class="entra">
+        <p class="etichetta">Preventivo</p>
+        <h2 id="preventivo-h">La vostra data è <span class="arancio">ancora libera?</span></h2>
+        <p class="capo">Data, posto e che festa è: vi rispondiamo con la disponibilità e il preventivo, di solito entro un giorno.</p>
+        <a class="wa" href="https://wa.me/393404193501" target="_blank" rel="noopener">Preferite WhatsApp? Scriveteci lì <svg class="freccia" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></a>
+      </div>
+      <form class="modulo entra" id="modulo" novalidate>
+        <div class="campo"><label for="f-nome">Nome</label><input id="f-nome" name="nome" autocomplete="name" required aria-describedby="e-nome"><p class="errore" id="e-nome" hidden>Scrivi il tuo nome, o i nomi degli sposi.</p></div>
+        <div class="campo"><label for="f-tel">Telefono</label><input id="f-tel" name="telefono" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="e-tel"><p class="errore" id="e-tel" hidden>Scrivi un numero a cui richiamarti.</p></div>
+        <div class="campo"><label for="f-data">Data della festa</label><input id="f-data" name="data" type="date" required aria-describedby="e-data"><p class="errore" id="e-data" hidden>Scegli il giorno della festa.</p></div>
+        <div class="campo"><label for="f-tipo">Che festa è</label><select id="f-tipo" name="tipo"><option>Matrimonio</option><option>Festa privata</option><option>Locale o pub</option><option>Sagra o piazza</option><option>Azienda</option></select></div>
+        <div class="campo campo--largo"><label for="f-dove">Dove</label><input id="f-dove" name="dove" autocomplete="off" required aria-describedby="e-dove"><p class="errore" id="e-dove" hidden>Scrivi la location o il paese.</p></div>
+        <div class="campo campo--largo"><label for="f-email">Email (facoltativa)</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
+        <div class="campo campo--largo"><label for="f-msg">Qualcosa da dirci? (facoltativo)</label><textarea id="f-msg" name="messaggio" rows="3" maxlength="1000"></textarea></div>
+        <div class="trappola" aria-hidden="true"><label for="f-sito">Non compilare</label><input id="f-sito" name="sito" tabindex="-1" autocomplete="off"></div>
+        <button class="btn" type="submit">Chiedi un preventivo</button>
+        <p class="stato" role="status" id="stato-modulo"></p>
+        <p class="privacy">Usiamo i vostri dati solo per rispondervi. <a href="privacy.html">Privacy</a></p>
       </form>
     </div>
   </section>
 </main>
 
-<footer class="footer closing" id="contact" aria-labelledby="close-h">
-  <div class="wrap">
-    <div class="closing__cta close--photo">
-      <div class="section-head--split">
-        <div><h2 id="close-h">La vostra data è ancora libera?</h2><p class="t-lead">Scriveteci data e luogo: vi rispondiamo entro un giorno.</p></div>
-        <a class="btn btn--primary" href="#preventivo">Chiedi un preventivo<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
-      </div>
-      <div class="close__media"><img src="foto/img031.jpg" alt="I tre Tribute-A sorridono abbracciati, in bianco e nero" loading="lazy" style="object-position: 50% 30%"></div>
-    </div>
-    <div class="closing__links">
-      <div class="grid">
-        <div class="span-4 stack-4">
-          <a class="nav__logo" href="#top" aria-label="Tribute-A, torna su"><img src="foto/logo-nero.svg" alt="Tribute-A"></a>
-          <p class="footer__lede">Party band di Verona: medley per decennio, dagli anni '60 a oggi.</p>
-        </div>
-        <div class="span-2 start-7 footer__col"><h3>Feste</h3><ul><li><a href="#matrimonio">Matrimoni</a></li><li><a href="#eventi">Eventi e locali</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>La band</h3><ul><li><a href="#show">Lo show</a></li><li><a href="#recensioni">Recensioni</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>Contatti</h3><ul><li><a href="mailto:offtributea@gmail.com">offtributea@gmail.com</a></li><li><a href="https://www.instagram.com/tributeaband/">Instagram</a></li><li><a href="https://www.youtube.com/@tribute-a">YouTube</a></li></ul></div>
-      </div>
-      <div class="footer__legal">
-        <span>&copy; 2026 Tribute-A</span>
-      </div>
-    </div>
+<footer class="piede">
+  <div class="giro">
+    <div><img src="foto/logo-bianco.svg" alt="Tribute-A" width="90" height="110" loading="lazy"><p>Party band di Verona. Medley per decennio, dagli anni '60 a oggi.</p></div>
+    <div><h3>Feste</h3><ul><li><a href="#matrimonio">Matrimoni</a></li><li><a href="#eventi">Eventi e locali</a></li><li><a href="#concerti">Prossimi concerti</a></li></ul></div>
+    <div><h3>La band</h3><ul><li><a href="#show">Lo show</a></li><li><a href="#recensioni">Recensioni</a></li><li><a href="#domande">Domande</a></li></ul></div>
+    <div><h3>Contatti</h3><ul><li><a href="mailto:offtributea@gmail.com">offtributea@gmail.com</a></li><li><a href="https://www.instagram.com/tributeaband/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/@tribute-a" target="_blank" rel="noopener">YouTube</a></li></ul></div>
+    <div class="legale"><span>© 2026 Tribute-A</span><a href="privacy.html">Privacy</a></div>
   </div>
 </footer>
 
-<nav class="actionbar" aria-label="Azioni rapide">
-  <a class="btn btn--primary" href="#preventivo">Chiedi un preventivo</a>
+<nav class="barra-tel" id="barra-tel" aria-label="Azioni rapide">
+  <a class="btn" href="#preventivo">Chiedi un preventivo</a>
+  <a class="btn btn--vuoto" href="https://wa.me/393404193501" target="_blank" rel="noopener" aria-label="Scrivici su WhatsApp">WhatsApp</a>
 </nav>
 
-<script type="module" src="assets/system.js"></script>
-<script type="module" src="assets/motion/motion.js"></script>
-<script type="module" src="assets/layout/layout.js"></script>
 <script>
-  // Modulo del preventivo: va dritto nel gestionale della band (scheda Richieste dal sito + mail ai tre)
-  (function () {
-    var API = 'https://script.google.com/macros/s/AKfycbzFQTgnms2pa01cVrtcpC-oy5PH21eZ1sbL9S4QefigTmYcA0hdAGypQEN2Cbcn19T0/exec';
-    var aperto = Date.now(), form = document.getElementById('modulo');
-    if (!form) return;
-    var stato = form.querySelector('[data-form-status]'), bottone = form.querySelector('[type="submit"]');
-    var dici = function (t) { stato.textContent = t; };
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var obbl = ['f-nome', 'f-tel', 'f-data', 'f-dove'].map(function (id) { return document.getElementById(id); });
-      if (obbl.some(function (el) { return !el.value.trim(); })) return; // gli errori campo per campo li mostra il kit
-      e.stopImmediatePropagation();
-      var v = function (id) { return document.getElementById(id).value; };
-      var dati = { nome: v('f-nome'), telefono: v('f-tel'), data: v('f-data'), tipo: v('f-tipo'), dove: v('f-dove'),
-        email: v('f-email'), messaggio: v('f-msg'), sito: v('f-sito'), ms: Date.now() - aperto };
-      bottone.disabled = true; dici('Invio in corso…');
-      fetch(API, { method: 'POST', credentials: 'omit', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify({ fn: 'richiestaSito', args: [dati] }) })
-        .then(function (r) { return r.json(); })
-        .then(function (j) {
-          if (!j.ok) throw new Error(j.e || 'errore');
-          form.reset(); dici('Grazie! Abbiamo ricevuto la richiesta: vi rispondiamo entro un giorno.');
-          if (window.gtag) window.gtag('event', 'generate_lead');
-        })
-        .catch(function (err) {
-          dici((err && err.message && !/fetch|json|errore/i.test(err.message) ? err.message + ' ' : 'Non siamo riusciti a inviarla. ') +
-            'Riprovate, oppure scriveteci su WhatsApp.');
-        })
-        .then(function () { bottone.disabled = false; });
-    }, true);
-  })();
+(function () {
+  'use strict';
+  var API = 'https://script.google.com/macros/s/AKfycbzFQTgnms2pa01cVrtcpC-oy5PH21eZ1sbL9S4QefigTmYcA0hdAGypQEN2Cbcn19T0/exec';
+  var $ = function (id) { return document.getElementById(id); };
+  document.documentElement.classList.add('js');
+  var chiama = function (fn, args) {
+    return fetch(API, { method: 'POST', credentials: 'omit', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({ fn: fn, args: args || [] }) })
+      .then(function (r) { return r.json(); }).then(function (j) { if (!j.ok) throw new Error(j.e || 'errore'); return j.r; });
+  };
 
-  // YouTube si carica solo quando si tocca play, dal dominio senza cookie
+  // ── video di apertura: orizzontale sul computer, verticale sul telefono (si scarica solo quello giusto)
+  var v = $('video-apertura');
+  if (v) {
+    var tel = window.matchMedia('(max-width: 767px)').matches;
+    v.poster = v.getAttribute(tel ? 'data-poster-verticale' : 'data-poster-orizzontale');
+    v.src = v.getAttribute(tel ? 'data-verticale' : 'data-orizzontale');
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { v.removeAttribute('autoplay'); v.preload = 'none'; }
+    else { var p = v.play(); if (p && p.catch) p.catch(function () { /* niente autoplay: resta il fotogramma */ }); }
+  }
+
+  // ── testata: trasparente sul video, piena quando si scorre; menu del telefono
+  var testa = $('testa'), panino = testa.querySelector('.panino'), barra = $('barra-tel');
+  var aggiorna = function () {
+    var y = window.scrollY || 0;
+    testa.classList.toggle('piena', y > 40);
+    if (barra) barra.classList.toggle('su', y > window.innerHeight * 0.7);
+  };
+  window.addEventListener('scroll', aggiorna, { passive: true }); aggiorna();
+  panino.addEventListener('click', function () {
+    var aperto = testa.classList.toggle('aperta');
+    panino.setAttribute('aria-expanded', aperto ? 'true' : 'false');
+    panino.setAttribute('aria-label', aperto ? 'Chiudi il menu' : 'Apri il menu');
+    document.body.style.overflow = aperto ? 'hidden' : '';
+  });
+  testa.addEventListener('click', function (e) {
+    if (e.target.closest && e.target.closest('a') && testa.classList.contains('aperta')) panino.click();
+  });
+
+  // ── titoli e foto entrano mentre si scorre
+  var entra = document.querySelectorAll('.entra');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (l) { l.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('vista'); io.unobserve(x.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
+    entra.forEach(function (el) { io.observe(el); });
+  } else entra.forEach(function (el) { el.classList.add('vista'); });
+
+  // ── prossimi concerti dal gestionale (solo locali e sagre confermati)
+  var MESI = ['Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu', 'Lug', 'Ago', 'Set', 'Ott', 'Nov', 'Dic'];
+  var GIORNI = ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'];
+  var testo = function (s) { var d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; };
+  var lista = $('lista-concerti');
+  var vuoto = function (t) { lista.innerHTML = '<li class="concerti-vuoto">' + t + '</li>'; };
+  chiama('concertiPubblici').then(function (l) {
+    if (!l || !l.length) return vuoto('In questo momento non ci sono date aperte al pubblico. Le annunciamo su <a href="https://www.instagram.com/tributeaband/" target="_blank" rel="noopener">Instagram</a>.');
+    lista.innerHTML = l.map(function (c) {
+      var p = c.data.split('-').map(Number), d = new Date(p[0], p[1] - 1, p[2]);
+      return '<li class="concerto"><time datetime="' + testo(c.data + (c.ora ? 'T' + c.ora : '')) + '"><b>' + p[2] + '</b><span>' + MESI[p[1] - 1] + ' ' + p[0] + '</span></time>' +
+        '<div><h3>' + testo(c.titolo) + '</h3><p>' + testo([GIORNI[d.getDay()], c.luogo, c.ora && 'ore ' + c.ora].filter(Boolean).join(' · ')) + '</p></div>' +
+        '<span class="tipo">' + (c.tipo === 'Sagra' ? 'Sagra' : 'Locale') + '</span></li>';
+    }).join('');
+    // per Google: ogni data come evento musicale
+    var ld = document.createElement('script'); ld.type = 'application/ld+json';
+    ld.textContent = JSON.stringify(l.map(function (c) {
+      return { '@context': 'https://schema.org', '@type': 'MusicEvent', name: 'Tribute-A live · ' + c.titolo, startDate: c.data + (c.ora ? 'T' + c.ora + ':00+01:00' : ''),
+        eventStatus: 'https://schema.org/EventScheduled', eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+        location: { '@type': 'Place', name: c.titolo, address: { '@type': 'PostalAddress', addressLocality: c.luogo || c.titolo, addressCountry: 'IT' } },
+        performer: { '@type': 'MusicGroup', name: 'Tribute-A', url: 'https://www.tribute-a.it/' } };
+    }));
+    document.head.appendChild(ld);
+  }).catch(function () { vuoto('Le prossime date le trovate su <a href="https://www.instagram.com/tributeaband/" target="_blank" rel="noopener">Instagram</a>.'); });
+
+  // ── YouTube si carica solo quando si tocca play, dal dominio senza cookie
   document.querySelectorAll('[data-yt] button').forEach(function (b) {
     b.addEventListener('click', function () {
       var box = b.parentNode, id = box.getAttribute('data-yt');
       box.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0" title="Video dei Tribute-A" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
     });
   });
+
+  // ── modulo del preventivo: va dritto nel gestionale (Preventivi → Dal sito) + mail ai tre
+  var form = $('modulo'), stato = $('stato-modulo'), aperto = Date.now();
+  var obbligatori = [['f-nome', 'e-nome'], ['f-tel', 'e-tel'], ['f-data', 'e-data'], ['f-dove', 'e-dove']];
+  var controlla = function (c) { var el = $(c[0]), ok = !!el.value.trim(); el.setAttribute('aria-invalid', ok ? 'false' : 'true'); $(c[1]).hidden = ok; return ok; };
+  obbligatori.forEach(function (c) { $(c[0]).addEventListener('input', function () { if ($(c[0]).getAttribute('aria-invalid') === 'true') controlla(c); }); });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var male = obbligatori.filter(function (c) { return !controlla(c); });
+    if (male.length) { stato.textContent = male.length === 1 ? 'Manca un campo.' : 'Mancano ' + male.length + ' campi.'; $(male[0][0]).focus(); return; }
+    var val = function (id) { return $(id).value; }, bottone = form.querySelector('button[type="submit"]');
+    bottone.disabled = true; stato.textContent = 'Invio in corso…';
+    chiama('richiestaSito', [{ nome: val('f-nome'), telefono: val('f-tel'), data: val('f-data'), tipo: val('f-tipo'), dove: val('f-dove'),
+      email: val('f-email'), messaggio: val('f-msg'), sito: val('f-sito'), ms: Date.now() - aperto }])
+      .then(function () { form.reset(); stato.textContent = 'Grazie! Abbiamo ricevuto la richiesta: vi rispondiamo entro un giorno.'; })
+      .catch(function (err) {
+        var m = err && err.message;
+        stato.textContent = (m && !/fetch|json|errore|network|load/i.test(m) ? m + ' ' : 'Non siamo riusciti a inviarla. ') + 'Riprovate, oppure scriveteci su WhatsApp.';
+      })
+      .then(function () { bottone.disabled = false; });
+  });
+})();
 </script>
 </body>
 </html>

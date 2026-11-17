@@ -1,24 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Livello_1" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 820.27 1009.9">
+<svg role="img" aria-label="Tribute-A" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 820.27 1009.9">
   <defs>
     <style>
-      .cls-1 {
-        filter: url(#drop-shadow-2);
-      }
 
       .cls-2 {
         fill: #1d1d1b;
       }
     </style>
-    <filter id="drop-shadow-2" x="0" y="0" width="820.27" height="1009.9" filterUnits="userSpaceOnUse">
-      <feOffset dx="182.22" dy="182.22"/>
-      <feGaussianBlur result="blur" stdDeviation="0"/>
-      <feFlood flood-color="#1d1d1b" flood-opacity="1"/>
-      <feComposite in2="blur" operator="in"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
   </defs>
-  <g class="cls-1">
+  <g>
     <path class="cls-2" d="M603.82,717.58v292.32h-65.57v-205.3h-129.52v71.76h-64.76v-158.78c0-86.21,52.21-133.16,129.92-133.16s129.93,46.95,129.93,133.16ZM538.25,751.98v-40.47c0-48.16-25.9-71.24-64.76-71.24s-64.76,23.07-64.76,71.24v40.47h129.52Z"/>
     <g>
       <path class="cls-2" d="M659.18,319.56c-18.55-10.41-37.42-17.57-58.24-21.15v270.07h-64.43v-270.07c-20.82,3.58-40.02,10.74-58.24,21.15l-21.47-46.86c32.21-19.52,71.58-29.28,111.93-29.28s80.04,9.76,111.93,29.28l-21.48,46.86Z"/>
