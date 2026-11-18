@@ -421,6 +421,13 @@ a:hover > .freccia { transform: translateX(4px); }
 .chiusura .bottoni { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
 @media (max-width: 767px) { .chiusura .bottoni .btn { flex: 1 1 100%; } }
 .zone { margin-top: 48px; }
+.clienti { padding-block: clamp(64px, 8vw, 104px); border-top: 1px solid rgba(245,239,231,.08); }
+.clienti .etichetta { text-align: center; }
+.loghi { list-style: none; margin: 44px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 44px 56px; }
+.loghi li { flex: 0 0 auto; }
+.loghi img { display: block; height: var(--h); width: auto; opacity: .72; transition: opacity .3s, transform .3s; }
+.loghi li:hover img { opacity: 1; transform: translateY(-2px); }
+@media (max-width: 860px) { .loghi { justify-content: center; gap: 36px 44px; } .loghi img { height: calc(var(--h) * .78); } }
 </style>
 </head>
 <body>
@@ -476,6 +483,20 @@ a:hover > .freccia { transform: translateX(4px); }
     </div>
   </section>
 
+
+  <section class="scuro clienti" aria-labelledby="clienti-h">
+    <div class="giro entra">
+      <p class="etichetta">Ci hanno scelto</p>
+      <h2 id="clienti-h" class="nascosto">Aziende e locali che ci hanno scelto: Azimut, Signorvino, Circe 1915, Donatoni, Arredoluce</h2>
+      <ul class="loghi">
+        <li><img src="foto/logo-azimut.png" alt="Gruppo Azimut" style="--h: 54px" width="711" height="203" loading="lazy"></li>
+        <li><img src="foto/logo-signorvino.png" alt="Signorvino" style="--h: 26px" width="882" height="122" loading="lazy"></li>
+        <li><img src="foto/logo-circe.png" alt="Circe 1915" style="--h: 56px" width="378" height="146" loading="lazy"></li>
+        <li><img src="foto/logo-donatoni.png" alt="Donatoni" style="--h: 44px" width="753" height="173" loading="lazy"></li>
+        <li><img src="foto/logo-arredoluce.png" alt="Arredoluce" style="--h: 44px" width="651" height="163" loading="lazy"></li>
+      </ul>
+    </div>
+  </section>
   <section class="sez chiaro manifesto" aria-label="Come suoniamo">
     <div class="giro entra">
       <p class="etichetta">Come suoniamo</p>
