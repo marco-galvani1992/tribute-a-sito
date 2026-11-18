@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Band per matrimoni a Verona e sul Lago di Garda · Tribute-A</title>
 <meta name="description" content="Party band per matrimoni a Verona, sul Lago di Garda e in Veneto: cerimonia e aperitivo in acustico, primo ballo dal vivo, due ore di medley dagli anni &#x27;60 a oggi e DJ set. 5,0 su Matrimonio.com.">
 <link rel="canonical" href="https://www.tribute-a.it/matrimoni">
@@ -13,9 +13,12 @@
 <meta property="og:url" content="https://www.tribute-a.it/matrimoni">
 <meta property="og:image" content="https://www.tribute-a.it/share.jpg">
 <meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.ico" sizes="32x32 48x48">
+<link rel="icon" href="icone/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="icone/apple-touch-icon.png">
 <meta name="theme-color" content="#141419">
+<link rel="preload" as="image" href="foto/sogno26-pubblico.jpg">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -126,85 +129,541 @@
 }
 </script>
 <style>
-  @font-face { font-family: "Montserrat"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("font/montserrat.woff2") format("woff2"); }
-  @font-face { font-family: "Montserrat Alternates"; font-style: normal; font-weight: 800; font-display: swap; src: url("font/montserrat-alternates-800.woff2") format("woff2"); }
-  :root { --inchiostro: #141419; --notte: #0f2127; --petrolio: #15373b; --crema: #f5efe7; --arancio: #f08a3c; --pesca: #ea9a57; --nebbia: #a9b5b6; }
-  * { box-sizing: border-box; }
-  html, body { overflow-x: clip; }
-  body { margin: 0; background: var(--inchiostro); color: var(--crema); font: 500 17px/1.65 "Montserrat", system-ui, sans-serif; }
-  a { color: var(--arancio); }
-  .testa { display: flex; align-items: center; justify-content: space-between; gap: 16px; max-width: 1100px; margin: 0 auto; padding: 14px 16px; }
-  .testa img { display: block; height: 52px; width: auto; }
-  .testa nav { display: flex; gap: 16px; font-weight: 700; font-size: 15px; white-space: nowrap; }
-  .testa nav a { color: var(--crema); text-decoration: none; }
-  .btn { display: inline-block; background: var(--arancio); color: #141419; font-weight: 800; text-decoration: none; padding: 14px 22px; border-radius: 999px; }
-  .btn.sec { background: transparent; color: var(--crema); border: 2px solid rgba(245,239,231,.5); }
-  .apertura { position: relative; min-height: 70vh; display: grid; align-items: end; }
-  .apertura img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  .apertura::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,20,25,.2) 0%, rgba(20,20,25,.92) 100%); }
-  .apertura .dentro { position: relative; z-index: 1; max-width: 1100px; width: 100%; margin: 0 auto; padding: 48px 16px; }
-  .etichetta { color: var(--pesca); font-weight: 800; letter-spacing: .14em; text-transform: uppercase; font-size: 13px; }
-  h1, h2 { font-family: "Montserrat Alternates", "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; line-height: 1.02; margin: 10px 0 14px; }
-  h1 { font-size: clamp(34px, 7vw, 68px); max-width: 15ch; }
-  h2 { font-size: clamp(24px, 4vw, 38px); }
-  .intro { font-size: clamp(18px, 2.2vw, 21px); max-width: 60ch; }
-  .bottoni { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
-  main { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
-  .blocco { padding: clamp(56px, 8vw, 96px) 0 0; }
-  .griglia { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-  .carta { background: rgba(21,55,59,.55); border: 1px solid rgba(169,181,182,.18); border-radius: 20px; padding: 20px; }
-  .carta h3 { margin: 0 0 6px; font-size: 19px; }
-  .carta p { margin: 0; color: #d9d3cb; }
-  .foto { width: 100%; border-radius: 20px; display: block; aspect-ratio: 3/2; object-fit: cover; }
-  .due { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: center; }
-  blockquote { margin: 0; font-size: 18px; }
-  blockquote cite { display: block; margin-top: 8px; color: var(--nebbia); font-style: normal; font-size: 14px; }
-  details { border-bottom: 1px solid rgba(169,181,182,.25); padding: 14px 0; }
-  summary { cursor: pointer; font-weight: 700; font-size: 18px; }
-  details p { margin: 10px 0 0; color: #d9d3cb; }
-  .chiusura { text-align: center; padding: clamp(64px, 9vw, 110px) 0; }
-  .chiusura .bottoni { justify-content: center; }
-  footer { border-top: 1px solid rgba(169,181,182,.2); padding: 28px 16px 40px; text-align: center; color: var(--nebbia); font-size: 14px; }
-  footer a { color: var(--crema); }
-  @media (max-width: 640px) { .testa nav a.solo-largo { display: none; } }
+/* font sul nostro sito (licenza SIL Open Font License): nessuna richiesta a Google, nessun indirizzo IP che esce */
+@font-face { font-family: "Montserrat"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("font/montserrat.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat Alternates"; font-style: normal; font-weight: 700; font-display: swap; src: url("font/montserrat-alternates-700.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat Alternates"; font-style: normal; font-weight: 800; font-display: swap; src: url("font/montserrat-alternates-800.woff2") format("woff2"); }
+/* ═══ Tribute-A · stile delle grafiche 2026: fumo, grana da pellicola, Montserrat (come i listini) ═══ */
+:root {
+  --inchiostro: #141419; --notte: #0f2127; --petrolio: #15373b; --crema: #f5efe7; --crema-2: #ebe2d4;
+  --arancio: #f08a3c; --fiamma: #d94c1a; --pesca: #ea9a57; --grigio: #5c5752; --nebbia: #a9b5b6;
+  --titoli: "Montserrat Alternates", "Montserrat", system-ui, sans-serif;
+  --testo: "Montserrat", system-ui, -apple-system, sans-serif;
+  --bordo: 24px; --max: 1240px;
+  --sez: clamp(88px, 10vw, 144px);       /* lo stesso spazio sopra e sotto ogni sezione */
+  --testa-h: 76px;
+}
+* { box-sizing: border-box; }
+html, body { overflow-x: hidden; max-width: 100%; }
+@supports (overflow: clip) { html, body { overflow-x: clip; } }
+.nascosto { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--testa-h); -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--inchiostro); color: var(--crema); font: 500 17px/1.6 var(--testo); }
+img, video { display: block; max-width: 100%; }
+a { color: inherit; }
+::selection { background: var(--arancio); color: var(--inchiostro); }
+/* grana sopra tutto, come nelle grafiche (non si tocca: pointer-events none) */
+body::after { content: ""; position: fixed; inset: 0; z-index: 90; pointer-events: none; opacity: .11; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"); }
+.salta { position: fixed; left: 16px; top: 8px; transform: translateY(-200%); z-index: 100; background: var(--crema); color: var(--inchiostro); padding: 10px 16px; }
+.salta:focus { transform: none; }
+:focus-visible { outline: 3px solid var(--arancio); outline-offset: 3px; }
+.giro { width: min(var(--max), 100% - 2 * var(--bordo)); margin-inline: auto; }
+
+/* titoli: Montserrat Alternates in maiuscolo, stretti, come sul roll-up */
+h1, h2, h3, .grande { font-family: var(--titoli); font-weight: 800; text-transform: uppercase; letter-spacing: -.01em; line-height: .95; margin: 0; }
+h2 { font-size: clamp(40px, 6.4vw, 92px); }
+h3 { font-size: clamp(22px, 2.2vw, 30px); line-height: 1.05; }
+.etichetta { display: inline-flex; align-items: center; gap: 12px; font: 700 13px/1 var(--testo); letter-spacing: .22em; text-transform: uppercase; color: var(--arancio); margin: 0 0 22px; }
+.etichetta::before { content: ""; width: 34px; height: 2px; background: currentColor; }
+.chiaro .etichetta { color: var(--fiamma); }
+.capo { font-size: clamp(18px, 1.5vw, 21px); line-height: 1.55; max-width: 58ch; margin: 22px 0 0; color: var(--nebbia); }
+.chiaro .capo { color: var(--grigio); }
+.fiamma { color: var(--fiamma); }
+.arancio { color: var(--arancio); }
+
+/* bottoni */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; padding: 0 26px; border: 0; border-radius: 0;
+  font: 700 15px/1 var(--testo); letter-spacing: .06em; text-transform: uppercase; text-decoration: none; cursor: pointer;
+  background: var(--arancio); color: var(--inchiostro); transition: background .2s, transform .15s; }
+.btn:hover { background: var(--pesca); }
+.btn:active { transform: translateY(1px); }
+.btn--vuoto { background: transparent; color: var(--crema); box-shadow: inset 0 0 0 2px rgba(245,239,231,.55); }
+.btn--vuoto:hover { background: rgba(245,239,231,.1); }
+.freccia { width: 18px; height: 18px; transition: transform .2s; }
+a:hover > .freccia { transform: translateX(4px); }
+
+/* ── testata ── */
+.testa { position: fixed; inset: 0 0 auto; z-index: 50; height: var(--testa-h); transition: background .3s, box-shadow .3s; }
+.testa.piena { background: rgba(20,20,25,.92); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(245,239,231,.08); }
+.testa .giro { height: 100%; display: flex; align-items: center; gap: 36px; }
+.logo { flex: none; display: block; }
+.logo img { height: 54px; width: auto; }
+.menu { display: flex; gap: 30px; margin-left: auto; }
+.menu a { font: 600 14px/1 var(--testo); letter-spacing: .08em; text-transform: uppercase; text-decoration: none; opacity: .85; padding: 8px 0; border-bottom: 2px solid transparent; }
+.menu a:hover { opacity: 1; border-color: var(--arancio); }
+.testa .btn { min-height: 46px; padding: 0 20px; font-size: 13px; }
+.panino { display: none; margin-left: auto; width: 48px; height: 48px; background: none; border: 0; color: var(--crema); cursor: pointer; }
+@media (max-width: 980px) {
+  .menu, .testa .btn { display: none; }
+  .panino { display: block; }
+  .testa.aperta { background: var(--inchiostro); height: 100svh; }
+  .testa.aperta .giro { flex-wrap: wrap; align-content: flex-start; padding-top: 11px; }
+  .testa.aperta .menu { display: flex; flex-direction: column; width: 100%; order: 3; gap: 0; margin: 40px 0 0; }
+  .testa.aperta .menu a { font: 800 34px/1.2 var(--titoli); padding: 12px 0; border: 0; }
+  .testa.aperta .btn { display: flex; order: 4; width: 100%; margin-top: 28px; min-height: 58px; font-size: 15px; }
+}
+
+/* ── apertura: video a tutto schermo, testo direttamente sopra ── */
+.apertura { position: relative; min-height: 100svh; display: flex; align-items: flex-end; overflow: hidden; background: var(--inchiostro) url("foto/apertura-orizzontale-poster.jpg") center / cover; }
+.apertura video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.apertura::before { content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg, rgba(20,20,25,.55) 0%, rgba(20,20,25,0) 22%, rgba(20,20,25,0) 45%, rgba(20,20,25,.86) 100%),
+              linear-gradient(90deg, rgba(20,20,25,.55) 0%, rgba(20,20,25,0) 60%); }
+.apertura .giro { position: relative; z-index: 2; padding-bottom: clamp(56px, 9vh, 110px); padding-top: calc(var(--testa-h) + 40px); }
+.apertura h1 { font-size: clamp(46px, 6.4vw, 104px); max-width: min(12ch, 100%); overflow-wrap: break-word; text-shadow: 0 2px 30px rgba(0,0,0,.35); }
+.apertura .capo { color: var(--crema); max-width: 46ch; text-shadow: 0 1px 12px rgba(0,0,0,.5); }
+.apertura .bottoni { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+.apertura .scendi { position: absolute; right: var(--bordo); bottom: clamp(56px, 9vh, 110px); z-index: 2; writing-mode: vertical-rl; font: 600 12px/1 var(--testo); letter-spacing: .3em; text-transform: uppercase; text-decoration: none; opacity: .7; }
+@media (max-width: 767px) {
+  .apertura { background-image: url("foto/apertura-poster.jpg"); }
+  .apertura::before { background: linear-gradient(180deg, rgba(20,20,25,.45) 0%, rgba(20,20,25,0) 20%, rgba(20,20,25,0) 38%, rgba(20,20,25,.92) 100%); }
+  .apertura h1 { font-size: clamp(34px, 10.4vw, 56px); }
+  .apertura .capo { font-size: 17px; }
+  .apertura .bottoni .btn { flex: 1 1 100%; }
+  .apertura .scendi { display: none; }
+}
+
+/* ── sezioni: un solo ritmo per tutte ── */
+.sez { position: relative; padding-block: var(--sez); }
+.chiaro { background: var(--crema); color: var(--inchiostro); }
+.scuro { background: var(--inchiostro); }
+.notte { background: var(--notte); }
+.fumo { background: var(--inchiostro) url("foto/fumo-nuvola.jpg") right center / auto 140% no-repeat; }
+.fumo::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--inchiostro) 35%, rgba(20,20,25,.6) 70%, rgba(20,20,25,.35)); }
+.fumo > .giro { position: relative; }
+@media (max-width: 860px) { .fumo { background-position: center bottom; background-size: 160% auto; } .fumo::before { background: linear-gradient(180deg, var(--inchiostro) 55%, rgba(20,20,25,.55)); } }
+.testa-sez { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 32px; margin-bottom: clamp(44px, 5vw, 72px); }
+.testa-sez .capo { margin-top: 0; max-width: 40ch; }
+@media (max-width: 860px) { .testa-sez { grid-template-columns: 1fr; gap: 18px; } }
+
+/* ── numeri ── */
+.numeri { padding-block: 44px; border-bottom: 1px solid rgba(20,20,25,.12); }
+.numeri .giro { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.numeri b { display: block; font: 800 clamp(40px, 5vw, 72px)/1 var(--titoli); color: var(--fiamma); }
+.numeri span { display: block; margin-top: 8px; font-weight: 600; font-size: 15px; color: var(--grigio); }
+@media (max-width: 760px) { .numeri .giro { grid-template-columns: 1fr 1fr; row-gap: 32px; } }
+
+/* ── due strade: due foto alte, la scritta sopra ── */
+.strade { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+.strada { position: relative; min-height: min(86svh, 820px); display: flex; align-items: flex-end; overflow: hidden; text-decoration: none; color: var(--crema); }
+.strada img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.7,.2,1), filter .6s; filter: grayscale(.25) contrast(1.05); }
+.strada:hover img { transform: scale(1.04); filter: none; }
+.strada::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(20,20,25,0) 40%, rgba(20,20,25,.88)); }
+.strada > div { position: relative; z-index: 2; padding: clamp(28px, 4vw, 56px); width: 100%; }
+.strada .grande { font-size: clamp(40px, 5.6vw, 84px); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.strada .grande .freccia { width: clamp(28px, 3vw, 44px); height: auto; flex: none; color: var(--arancio); }
+.strada p { margin: 14px 0 0; max-width: 40ch; color: rgba(245,239,231,.85); }
+@media (max-width: 760px) { .strade { grid-template-columns: 1fr; } .strada { min-height: 72svh; } }
+
+/* ── matrimonio: tre momenti ── */
+.momenti { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 2.4vw, 36px); counter-reset: m; }
+.momenti li { counter-increment: m; }
+.momenti figure { margin: 0 0 22px; aspect-ratio: 4 / 5; overflow: hidden; }
+.momenti img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.08); transition: filter .6s, transform 1s; }
+.momenti li:hover img { filter: grayscale(0); transform: scale(1.03); }
+.momenti h3::before { content: "0" counter(m); display: block; font-size: 15px; letter-spacing: .2em; color: var(--fiamma); margin-bottom: 10px; }
+.momenti p { margin: 12px 0 0; color: var(--grigio); }
+@media (max-width: 860px) { .momenti { grid-template-columns: 1fr; gap: 48px; } .momenti figure { aspect-ratio: 4 / 3; } }
+
+/* ── eventi e locali ── */
+.eventi-griglia { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(32px, 5vw, 80px); align-items: center; }
+.righe { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(245,239,231,.16); }
+.righe li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 20px; padding: 24px 0; border-bottom: 1px solid rgba(245,239,231,.16); }
+.righe h3 { font-size: clamp(22px, 2vw, 28px); }
+.righe p { grid-column: 1; margin: 0; color: var(--nebbia); }
+.righe span { grid-row: 1 / span 2; grid-column: 2; align-self: center; font: 700 13px/1 var(--testo); letter-spacing: .14em; text-transform: uppercase; color: var(--pesca); }
+.collage { position: relative; aspect-ratio: 1 / 1.05; }
+.collage img { position: absolute; object-fit: cover; box-shadow: 0 30px 60px -20px rgba(0,0,0,.7); }
+.collage img:nth-child(1) { inset: 0 18% 22% 0; width: 82%; height: 78%; }
+.collage img:nth-child(2) { right: 0; bottom: 0; width: 52%; height: 52%; outline: 10px solid var(--inchiostro); }
+@media (max-width: 860px) { .eventi-griglia { grid-template-columns: 1fr; } .collage { aspect-ratio: 1 / .9; }
+  .righe li { grid-template-columns: 1fr; } .righe span { grid-row: 1; grid-column: 1; margin-bottom: 4px; } }
+
+/* ── prossimi concerti: come la locandina di un tour ── */
+.concerti { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--crema); }
+.concerto { display: grid; grid-template-columns: 150px minmax(0, 1fr) auto; align-items: center; gap: 28px; padding: 26px 0; border-bottom: 1px solid rgba(245,239,231,.2); }
+.concerto time { font-family: var(--titoli); font-weight: 800; text-transform: uppercase; line-height: .9; }
+.concerto time b { display: block; font-size: 64px; color: var(--arancio); }
+.concerto time span { font-size: 17px; letter-spacing: .08em; }
+.concerto h3 { font-size: clamp(24px, 2.6vw, 38px); }
+.concerto p { margin: 6px 0 0; color: var(--nebbia); font-weight: 600; }
+.concerto .tipo { font: 700 12px/1 var(--testo); letter-spacing: .16em; text-transform: uppercase; padding: 9px 12px; box-shadow: inset 0 0 0 1px rgba(245,239,231,.4); }
+.concerti-vuoto { padding: 34px 0; color: var(--nebbia); font-size: 19px; border-bottom: 1px solid rgba(245,239,231,.2); }
+.concerti-vuoto a { color: var(--arancio); }
+@media (max-width: 640px) { .concerto { grid-template-columns: 92px minmax(0, 1fr); gap: 18px; } .concerto time b { font-size: 46px; } .concerto .tipo { display: none; } }
+
+/* ── lo show: video ── */
+.video { position: relative; aspect-ratio: 16 / 9; background: #000; overflow: hidden; }
+.video img, .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border: 0; transition: transform .8s; }
+.video button { position: absolute; inset: 0; width: 100%; background: linear-gradient(180deg, rgba(20,20,25,0) 50%, rgba(20,20,25,.6)); border: 0; cursor: pointer; color: var(--crema); }
+.video:hover img { transform: scale(1.03); }
+.play { position: absolute; left: 50%; top: 50%; width: 86px; height: 86px; margin: -43px 0 0 -43px; border-radius: 50%; background: var(--arancio); color: var(--inchiostro); display: grid; place-items: center; transition: transform .2s; }
+.play svg { width: 30px; height: 30px; margin-left: 4px; }
+.video:hover .play { transform: scale(1.08); }
+.decenni { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 16px; }
+.decenni .play { width: 52px; height: 52px; margin: -26px 0 0 -26px; }
+.decenni .play svg { width: 18px; height: 18px; }
+.decenni .nome { position: absolute; left: 14px; bottom: 12px; font: 800 18px/1 var(--titoli); text-transform: uppercase; pointer-events: none; }
+@media (max-width: 760px) { .decenni { grid-template-columns: 1fr 1fr; } }
+
+/* ── manifesto ── */
+.manifesto .frase { font: 800 clamp(34px, 5.2vw, 76px)/1.02 var(--titoli); text-transform: uppercase; margin: 0; max-width: 18ch; }
+.manifesto .frase em { font-style: normal; color: var(--fiamma); }
+.manifesto small { display: block; margin-top: 28px; font: 600 18px/1.5 var(--testo); color: var(--grigio); max-width: 52ch; }
+
+/* ── recensioni ── */
+.recensioni-griglia { display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
+.voto { position: sticky; top: calc(var(--testa-h) + 24px); }
+.voto b { display: block; font: 800 clamp(96px, 11vw, 160px)/.85 var(--titoli); color: var(--fiamma); }
+.stelle { color: var(--arancio); font-size: 26px; letter-spacing: 4px; margin: 14px 0 8px; }
+.voto p { margin: 0 0 24px; color: var(--grigio); font-weight: 600; }
+.voto a { font-weight: 700; text-decoration: none; border-bottom: 2px solid var(--fiamma); }
+.voci { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.voce { margin: 0; padding: 32px; background: #fff; box-shadow: 0 1px 0 rgba(20,20,25,.08); display: flex; flex-direction: column; }
+.voce:first-child { grid-column: 1 / -1; background: var(--inchiostro); color: var(--crema); }
+.voce:first-child blockquote { font: 800 clamp(24px, 2.6vw, 36px)/1.15 var(--titoli); text-transform: uppercase; }
+.voce .stelle { font-size: 18px; margin: 0 0 16px; }
+.voce h3 { font-size: 20px; margin-bottom: 12px; }
+.voce blockquote { margin: 0; font-size: 18px; line-height: 1.55; flex: 1; }
+.voce figcaption { margin-top: 22px; font-weight: 700; font-size: 14px; letter-spacing: .1em; text-transform: uppercase; color: var(--grigio); }
+.voce:first-child figcaption { color: var(--pesca); }
+.widget-recensioni { margin-top: 28px; }
+@media (max-width: 980px) { .recensioni-griglia { grid-template-columns: 1fr; } .voto { position: static; } }
+@media (max-width: 640px) { .voci { grid-template-columns: 1fr; } .voce { padding: 26px; } }
+
+/* ── domande ── */
+.domande { display: grid; grid-template-columns: 1fr 1fr; gap: 0 clamp(32px, 5vw, 80px); }
+.domande details { border-bottom: 1px solid rgba(20,20,25,.16); }
+.domande summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 24px 0; font: 700 19px/1.3 var(--testo); }
+.domande summary::-webkit-details-marker { display: none; }
+.domande summary::after { content: "+"; font: 700 28px/1 var(--testo); color: var(--fiamma); transition: transform .2s; }
+.domande details[open] summary::after { transform: rotate(45deg); }
+.domande p { margin: 0 0 24px; color: var(--grigio); max-width: 60ch; }
+@media (max-width: 860px) { .domande { grid-template-columns: 1fr; } }
+
+/* ── preventivo ── */
+.preventivo-griglia { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1fr); gap: clamp(36px, 6vw, 96px); align-items: start; }
+.preventivo-griglia .wa { display: inline-flex; align-items: center; gap: 10px; margin-top: 28px; font-weight: 700; text-decoration: none; border-bottom: 2px solid var(--arancio); padding-bottom: 4px; }
+.modulo { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 18px; }
+.campo { display: grid; gap: 8px; }
+.campo--largo { grid-column: 1 / -1; }
+.campo label { font: 700 12px/1 var(--testo); letter-spacing: .16em; text-transform: uppercase; color: var(--nebbia); }
+.campo input, .campo select, .campo textarea { width: 100%; font: 500 17px/1.4 var(--testo); color: var(--crema); background: rgba(245,239,231,.06);
+  border: 0; border-bottom: 2px solid rgba(245,239,231,.35); border-radius: 0; padding: 14px 14px; min-height: 54px; }
+.campo select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--arancio) 50%), linear-gradient(135deg, var(--arancio) 50%, transparent 50%);
+  background-position: calc(100% - 20px) 24px, calc(100% - 14px) 24px; background-size: 6px 6px; background-repeat: no-repeat; }
+.campo select option { color: var(--inchiostro); }
+.campo input:focus, .campo select:focus, .campo textarea:focus { outline: 0; border-color: var(--arancio); background-color: rgba(245,239,231,.1); }
+.campo [aria-invalid="true"] { border-color: var(--fiamma); }
+.campo .errore { margin: 0; color: var(--pesca); font-size: 14px; font-weight: 600; }
+.campo textarea { min-height: 110px; resize: vertical; }
+.campo input[type="date"] { color-scheme: dark; }
+.modulo .btn { grid-column: 1 / -1; min-height: 60px; font-size: 16px; }
+.modulo .stato { grid-column: 1 / -1; margin: 0; min-height: 1.6em; font-weight: 600; color: var(--pesca); }
+.modulo .privacy { grid-column: 1 / -1; margin: 0; font-size: 14px; color: var(--nebbia); }
+.spunta label { display: flex; gap: 12px; align-items: flex-start; font: 500 15px/1.5 var(--testo); letter-spacing: 0; text-transform: none; color: var(--crema); cursor: pointer; }
+.spunta input { flex: none; width: 22px; height: 22px; min-height: 0; margin: 1px 0 0; padding: 0; accent-color: var(--arancio); }
+.spunta a { color: var(--arancio); }
+.trappola { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+@media (max-width: 860px) { .preventivo-griglia { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .modulo { grid-template-columns: 1fr; } }
+
+/* ── piede ── */
+.piede { background: var(--inchiostro); padding: clamp(64px, 8vw, 104px) 0 calc(36px + env(safe-area-inset-bottom)); border-top: 1px solid rgba(245,239,231,.1); }
+.piede .giro { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; }
+.piede img { height: 110px; width: auto; }
+.piede h3 { font-size: 15px; letter-spacing: .14em; color: var(--arancio); margin-bottom: 16px; }
+.piede ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.piede a { text-decoration: none; opacity: .85; }
+.piede a:hover { opacity: 1; color: var(--arancio); }
+.piede p { color: var(--nebbia); margin: 18px 0 0; max-width: 32ch; }
+.legale { grid-column: 1 / -1; padding-top: 28px; margin-top: 12px; border-top: 1px solid rgba(245,239,231,.1); font-size: 14px; color: var(--nebbia); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+@media (max-width: 860px) { .piede .giro { grid-template-columns: 1fr 1fr; } .piede .giro > :first-child { grid-column: 1 / -1; } }
+
+/* barra in basso sul telefono: sempre a portata di pollice */
+.barra-tel { display: none; }
+@media (max-width: 767px) {
+  .barra-tel { display: grid; grid-template-columns: 1fr auto; gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgba(20,20,25,.94); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+    transform: translateY(110%); transition: transform .3s; }
+  .barra-tel.su { transform: none; }
+  .barra-tel .btn { min-height: 52px; padding: 0 14px; font-size: 13px; white-space: nowrap; }
+  .barra-tel .btn--vuoto { padding: 0 18px; }
+  .piede { padding-bottom: calc(110px + env(safe-area-inset-bottom)); }
+}
+
+/* ── banner dei cookie: "Rifiuta" grande quanto "Accetta" (regole del Garante) ── */
+.consenso { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 80; max-width: 560px; margin-left: auto; background: var(--crema); color: var(--inchiostro);
+  padding: 24px; box-shadow: 0 24px 60px -12px rgba(0,0,0,.6); font-size: 15px; line-height: 1.55; }
+.consenso[hidden], .consenso [hidden] { display: none !important; }
+.consenso h2 { font-size: 22px; margin-bottom: 10px; }
+.consenso p { margin: 0 0 14px; color: var(--grigio); }
+.consenso a { color: var(--fiamma); }
+.consenso .scelte { display: grid; gap: 10px; margin: 0 0 16px; }
+.consenso label { display: flex; gap: 10px; align-items: flex-start; font-weight: 600; cursor: pointer; }
+.consenso label small { display: block; font-weight: 500; color: var(--grigio); }
+.consenso input { width: 20px; height: 20px; margin-top: 2px; accent-color: var(--fiamma); flex: none; }
+.consenso .bottoni-consenso { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.consenso .btn { min-height: 48px; padding: 0 12px; font-size: 13px; }
+.consenso .btn--scuro { background: var(--inchiostro); color: var(--crema); }
+.consenso .btn--scuro:hover { background: #2a2a31; }
+.consenso .salva { grid-column: 1 / -1; background: none; color: var(--inchiostro); box-shadow: inset 0 0 0 2px rgba(20,20,25,.35); }
+@media (max-width: 767px) { .consenso { left: 8px; right: 8px; bottom: 8px; padding: 20px; } }
+
+/* entrata leggera di titoli e foto (niente se la persona ha chiesto meno movimento) */
+@media (prefers-reduced-motion: no-preference) {
+  .js .entra { opacity: 0; transform: translateY(28px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+  .js .entra.vista { opacity: 1; transform: none; }
+  .apertura h1, .apertura .capo, .apertura .bottoni { animation: su 1s cubic-bezier(.2,.7,.2,1) both; }
+  .apertura .capo { animation-delay: .15s; } .apertura .bottoni { animation-delay: .3s; }
+  @keyframes su { from { opacity: 0; transform: translateY(30px); } }
+}
+
+/* pagine interne (matrimoni, feste ed eventi): apertura con foto invece del video */
+.apertura.interna { min-height: 88svh; background-image: none !important; }
+.apertura.interna > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.momenti.quattro { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 1100px) { .momenti.quattro { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 860px) { .momenti.quattro { grid-template-columns: 1fr; } }
+.chiusura .bottoni { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+@media (max-width: 767px) { .chiusura .bottoni .btn { flex: 1 1 100%; } }
+.zone { margin-top: 48px; }
 </style>
 </head>
 <body>
-<header class="testa">
-  <a href="./" aria-label="Tribute-A, pagina principale"><img src="foto/logo-bianco.svg" alt="Tribute-A" width="44" height="54"></a>
-  <nav aria-label="Menu"><a class="solo-largo" href="./">Home</a><a href="feste-ed-eventi">Feste e locali</a><a href="./#preventivo">Preventivo</a></nav>
-</header>
-<div class="apertura">
-  <img src="foto/img134.jpg" alt="Gli sposi ballano davanti alla band Tribute-A" fetchpriority="high">
-  <div class="dentro">
-    <div class="etichetta">Musica per matrimoni</div>
-    <h1>Band per matrimoni a Verona e sul Garda</h1>
-    <p class="intro">Dalla cerimonia all'ultimo ballo: tre musicisti, il vostro primo ballo dal vivo e due ore di medley dagli anni '60 a oggi, senza mai fermarsi. 20 matrimoni nel 2025-2026, 5,0 su Matrimonio.com.</p>
-    <div class="bottoni"><a class="btn" href="./#preventivo">Chiedi un preventivo</a><a class="btn sec" href="https://wa.me/393509086700?text=Ciao%21%20Ci%20sposiamo%20e%20vorremmo%20informazioni%20per%20la%20musica.%20Data%3A%20" target="_blank" rel="noopener">Scrivici su WhatsApp</a></div>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<header class="testa" id="testa">
+  <div class="giro">
+    <a class="logo" href="./" aria-label="Tribute-A, pagina principale"><img src="foto/logo-bianco.svg" alt="Tribute-A" width="44" height="54"></a>
+    <nav class="menu" aria-label="Menu principale">
+      <a href="./#matrimonio">Matrimoni</a>
+      <a href="./#eventi">Eventi e locali</a>
+      <a href="./#concerti">Concerti</a>
+      <a href="./#show">Lo show</a>
+      <a href="./#recensioni">Recensioni</a>
+    </nav>
+    <a class="btn" href="./#preventivo">Chiedi un preventivo</a>
+    <button class="panino" type="button" aria-expanded="false" aria-controls="testa" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M3 8h18M3 16h18" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+    </button>
   </div>
-</div>
-<main>
-<section class="blocco"><h2>La musica di tutta la giornata</h2><div class="griglia">
-<div class="carta"><h3>Cerimonia e aperitivo in acustico</h3><p>Voce e chitarra per l'ingresso, gli anelli e il brindisi. Scegliete i brani, noi li cuciamo sui vostri momenti.</p></div>
-<div class="carta"><h3>Il primo ballo dal vivo</h3><p>La vostra canzone suonata da noi, nel momento che scegliete voi.</p></div>
-<div class="carta"><h3>Due ore di party senza pause</h3><p>Un medley da circa quindici minuti per ogni decennio, dagli anni '60 alle hit di oggi, un pezzo dentro l'altro.</p></div>
-<div class="carta"><h3>DJ set fino a tardi</h3><p>Quando la band chiude la festa continua: DJ set su richiesta, con le luci e l'impianto che sono già lì.</p></div>
-</div></section><section class="blocco"><h2>Cosa dicono gli sposi</h2><div class="griglia">
-<div class="carta"><blockquote>"Hanno un'energia contagiosa che fa ballare chiunque, persino le zie settantenni."<cite>Federica · matrimonio, giugno 2026</cite></blockquote></div>
-<div class="carta"><blockquote>"La festa è decollata grazie alla loro energia travolgente e alla loro simpatia. Sono riusciti a far ballare e cantare davvero tutti gli invitati."<cite>Giulia · matrimonio</cite></blockquote></div>
-<div class="carta"><blockquote>"Grazie ai medley la serata è stata super dinamica e ha fatto ballare tutti, persino le nonne."<cite>Nicola · matrimonio, febbraio 2026</cite></blockquote></div>
-</div><p>5,0 su 5 con 6 recensioni su <a href="https://www.matrimonio.com/shared/rate/424261" target="_blank" rel="noopener">Matrimonio.com</a>, consigliati dal 100% delle coppie.</p></section><section class="blocco"><h2>Dove suoniamo</h2><p>Siamo di Verona e suoniamo in tutto il Veneto, sul Lago di Garda, in Lombardia e in Trentino: Verona e provincia, Vicenza, Padova, Mantova, Brescia, Trento. Per le date più lontane chiedeteci pure.</p><p>Ville, agriturismi, cantine e location sul lago: ci servono un palco (o uno spazio) di almeno 4x3 metri, corrente a 220V e, se si suona all'aperto, un riparo.</p></section>
-<section class="blocco"><h2>Domande frequenti</h2><details><summary>Quanto dura la musica al matrimonio?</summary><p>Due ore di live in blocchi da circa quindici minuti per decennio. Prima, se volete, la cerimonia e l&#x27;aperitivo in acustico; dopo, il DJ set.</p></details><details><summary>Suonate il nostro primo ballo?</summary><p>Sì, dal vivo. Le vostre canzoni del cuore le aggiungiamo volentieri alla scaletta.</p></details><details><summary>Che musica suonate?</summary><p>Le hit che fanno ballare tutti, dagli anni &#x27;60 a oggi: pop, rock e dance italiani e internazionali, in medley per decennio.</p></details><details><summary>Portate voi l&#x27;impianto audio e luci?</summary><p>Sì: audio e luci sono nei pacchetti, con il fonico in quelli più completi.</p></details><details><summary>Quanto prima arrivate alla location?</summary><p>Da una a due ore prima, per montare e fare il soundcheck. Ci serve un parcheggio o una zona di carico vicino all&#x27;ingresso.</p></details><details><summary>E la SIAE?</summary><p>I permessi SIAE sono a carico di chi organizza: vi diciamo noi cosa serve e quando farli.</p></details><details><summary>In che zone suonate ai matrimoni?</summary><p>Verona e provincia, Lago di Garda, Vicenza, Padova, Mantova, Brescia e Trento; per le date più lontane chiedeteci.</p></details></section>
-<section class="chiusura">
-  <img class="foto" src="foto/sogno26-palco.jpg" alt="I Tribute-A sul palco" loading="lazy">
-  <h2 style="margin-top:40px">La vostra data è ancora libera?</h2>
-  <p>Diteci data, posto e che festa è: vi rispondiamo con disponibilità e preventivo, di solito entro un giorno.</p>
-  <div class="bottoni"><a class="btn" href="./#preventivo">Chiedi un preventivo</a><a class="btn sec" href="https://wa.me/393509086700?text=Ciao%21%20Ci%20sposiamo%20e%20vorremmo%20informazioni%20per%20la%20musica.%20Data%3A%20" target="_blank" rel="noopener">WhatsApp +39 350 908 6700</a></div>
-</section>
+</header>
+
+<main id="top">
+  <section class="apertura interna" aria-labelledby="titolo">
+    <img src="foto/sogno26-pubblico.jpg" alt="Gli invitati ballano con le mani alzate sotto il palco dei Tribute-A" fetchpriority="high">
+    <div class="giro" id="contenuto">
+      <p class="etichetta">Musica per matrimoni</p>
+      <h1 id="titolo">Band per matrimoni a Verona e sul Garda</h1>
+      <p class="capo">Dalla cerimonia all&#x27;ultimo ballo: tre musicisti, il vostro primo ballo dal vivo e due ore di medley dagli anni &#x27;60 a oggi, senza mai fermarsi. 5,0 su Matrimonio.com.</p>
+      <div class="bottoni">
+        <a class="btn" href="./#preventivo">Chiedi un preventivo <svg class="freccia" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></a>
+        <a class="btn btn--vuoto" href="https://wa.me/393509086700?text=Ciao%21%20Ci%20sposiamo%20e%20vorremmo%20informazioni%20per%20la%20musica.%20Data%3A%20" target="_blank" rel="noopener">Scrivici su WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sez chiaro" aria-labelledby="giornata-h">
+    <div class="giro">
+      <div class="testa-sez entra">
+        <div><p class="etichetta">La giornata</p><h2 id="giornata-h">La musica di<br>tutta la <span class="fiamma">giornata</span></h2></div>
+        <p class="capo">20 matrimoni nel 2025-2026. Pensiamo noi alla musica dalla cerimonia all'ultimo ballo, voi pensate solo a godervela.</p>
+      </div>
+      <ol class="momenti quattro"><li class="entra"><figure><img src="foto/img134.jpg" alt="I Tribute-A con chitarra e basso" loading="lazy"></figure><h3>Cerimonia e aperitivo in acustico</h3><p>Voce e chitarra per l&#x27;ingresso, gli anelli e il brindisi. Scegliete i brani, noi li cuciamo sui vostri momenti.</p></li><li class="entra"><figure><img src="foto/t3.jpg" alt="Il cantante con il basso rosso tra le fontane di luce" loading="lazy"></figure><h3>Il primo ballo dal vivo</h3><p>La vostra canzone suonata da noi, nel momento che scegliete voi.</p></li><li class="entra"><figure><img src="foto/sogno26-palco.jpg" alt="I Tribute-A sul palco tra lampadari e fasci di luce" loading="lazy"></figure><h3>Due ore di party senza pause</h3><p>Un medley da circa quindici minuti per ogni decennio, dagli anni &#x27;60 alle hit di oggi, un pezzo dentro l&#x27;altro.</p></li><li class="entra"><figure><img src="foto/t6bw.jpg" alt="Il pubblico balla sotto il palco con le mani alzate" loading="lazy"></figure><h3>DJ set fino a tardi</h3><p>Quando la band chiude la festa continua: DJ set su richiesta, con le luci e l&#x27;impianto che sono già lì.</p></li></ol>
+    </div>
+  </section>
+
+  <section class="sez chiaro" id="recensioni" aria-labelledby="recensioni-h" style="padding-top: 0">
+    <div class="giro recensioni-griglia">
+      <div class="voto entra">
+        <p class="etichetta">Recensioni</p>
+        <h2 id="recensioni-h" class="nascosto">Recensioni su Matrimonio.com</h2>
+        <b>5,0</b>
+        <div class="stelle" aria-label="5 stelle su 5">★★★★★</div>
+        <p>6 recensioni su Matrimonio.com.<br>Consigliati dal 100% delle coppie.</p>
+        <a href="https://www.matrimonio.com/musica-matrimonio/tribute-a--e424261/opinioni" target="_blank" rel="noopener">Leggile tutte</a>
+      </div>
+      <div>
+        <div class="voci">
+          <figure class="voce entra"><div class="stelle" aria-hidden="true">★★★★★</div>
+            <blockquote>"Hanno un'energia contagiosa che fa ballare chiunque, persino le zie settantenni."</blockquote>
+            <figcaption>Federica · matrimonio, giugno 2026</figcaption></figure>
+          <figure class="voce entra"><div class="stelle" aria-hidden="true">★★★★★</div><h3>Si accende la festa</h3>
+            <blockquote>"La festa è decollata grazie alla loro energia travolgente e alla loro simpatia. Sono riusciti a far ballare e cantare davvero tutti gli invitati."</blockquote>
+            <figcaption>Giulia · matrimonio</figcaption></figure>
+          <figure class="voce entra"><div class="stelle" aria-hidden="true">★★★★★</div><h3>Divertimento assicurato</h3>
+            <blockquote>"Grazie ai medley la serata è stata super dinamica e ha fatto ballare tutti, persino le nonne."</blockquote>
+            <figcaption>Nicola · matrimonio, febbraio 2026</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sez fumo" aria-labelledby="dove-h">
+    <div class="giro">
+      <div class="entra">
+        <p class="etichetta">Ville, agriturismi, cantine, lago</p>
+        <h2 id="dove-h">Dove suoniamo,<br><span class="arancio">cosa ci serve</span></h2>
+        <p class="capo">Siamo di Verona e suoniamo in tutto il Veneto, sul Lago di Garda, in Lombardia e in Trentino: Verona e provincia, Vicenza, Padova, Mantova, Brescia, Trento. Per le date più lontane chiedeteci pure.</p>
+        <ul class="righe zone"><li><h3>Palco di almeno 4x3 metri</h3><p>Al chiuso o all&#x27;aperto, con un riparo se si suona fuori.</p><span>Spazio</span></li><li><h3>Corrente a 220V</h3><p>Due o tre prese vicino al palco.</p><span>Tecnica</span></li><li><h3>Arrivo da una a due ore prima</h3><p>Per montare e fare il soundcheck, con un parcheggio o una zona di carico vicino all&#x27;ingresso.</p><span>Montaggio</span></li><li><h3>Permessi SIAE</h3><p>Sono a carico di chi organizza: vi diciamo noi cosa serve e quando farli.</p><span>Burocrazia</span></li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sez chiaro" id="domande" aria-labelledby="domande-h" style="background: var(--crema-2)">
+    <div class="giro">
+      <div class="testa-sez entra"><div><p class="etichetta">Domande</p><h2 id="domande-h">Prima di chiamarci</h2></div></div>
+      <div class="domande">
+        <div><details><summary>Quanto dura la musica al matrimonio?</summary><p>Due ore di live in blocchi da circa quindici minuti per decennio. Prima, se volete, la cerimonia e l&#x27;aperitivo in acustico; dopo, il DJ set.</p></details><details><summary>Suonate il nostro primo ballo?</summary><p>Sì, dal vivo. Le vostre canzoni del cuore le aggiungiamo volentieri alla scaletta.</p></details><details><summary>Che musica suonate?</summary><p>Le hit che fanno ballare tutti, dagli anni &#x27;60 a oggi: pop, rock e dance italiani e internazionali, in medley per decennio.</p></details><details><summary>Portate voi l&#x27;impianto audio e luci?</summary><p>Sì: audio e luci sono nei pacchetti, con il fonico in quelli più completi.</p></details></div>
+        <div><details><summary>Quanto prima arrivate alla location?</summary><p>Da una a due ore prima, per montare e fare il soundcheck. Ci serve un parcheggio o una zona di carico vicino all&#x27;ingresso.</p></details><details><summary>E la SIAE?</summary><p>I permessi SIAE sono a carico di chi organizza: vi diciamo noi cosa serve e quando farli.</p></details><details><summary>In che zone suonate ai matrimoni?</summary><p>Verona e provincia, Lago di Garda, Vicenza, Padova, Mantova, Brescia e Trento; per le date più lontane chiedeteci.</p></details></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sez notte chiusura" aria-labelledby="chiudi-h">
+    <div class="giro entra">
+      <p class="etichetta">Preventivo</p>
+      <h2 id="chiudi-h">La vostra data<br>è ancora <span class="arancio">libera?</span></h2>
+      <p class="capo">Diteci data, posto e che festa è: vi rispondiamo con disponibilità e preventivo, di solito entro un giorno.</p>
+      <div class="bottoni">
+        <a class="btn" href="./#preventivo">Chiedi un preventivo <svg class="freccia" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></a>
+        <a class="btn btn--vuoto" href="https://wa.me/393509086700?text=Ciao%21%20Ci%20sposiamo%20e%20vorremmo%20informazioni%20per%20la%20musica.%20Data%3A%20" target="_blank" rel="noopener">WhatsApp +39 350 908 6700</a>
+      </div>
+    </div>
+  </section>
 </main>
-<footer>
-  <p><a href="./">Tribute-A</a> · party band di Verona · <a href="matrimoni">Band per matrimoni</a> · <a href="feste-ed-eventi">Feste, locali e sagre</a> · <a href="privacy.html">Privacy</a></p>
-  <p>offtributea@gmail.com · Foto: Valerio Di Domenica, Panda Bros Productions</p>
+
+<footer class="piede">
+  <div class="giro">
+    <div><img src="foto/logo-bianco.svg" alt="Tribute-A" width="90" height="110" loading="lazy"><p>Party band di Verona. Medley per decennio, dagli anni '60 a oggi.</p><p>Suoniamo a matrimoni, feste, locali e sagre a Verona, Vicenza, Padova, Mantova, Brescia, Trento e sul Lago di Garda.</p></div>
+    <div><h3>Feste</h3><ul><li><a href="./#matrimonio">Matrimoni</a></li><li><a href="./#eventi">Eventi e locali</a></li><li><a href="./#concerti">Prossimi concerti</a></li><li><a href="matrimoni">Band per matrimoni</a></li><li><a href="feste-ed-eventi">Band per feste e locali</a></li></ul></div>
+    <div><h3>La band</h3><ul><li><a href="./#show">Lo show</a></li><li><a href="./#recensioni">Recensioni</a></li><li><a href="./#domande">Domande</a></li></ul></div>
+    <div><h3>Contatti</h3><ul><li><a href="mailto:offtributea@gmail.com">offtributea@gmail.com</a></li><li><a href="https://www.instagram.com/tributeaband/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/@tribute-a" target="_blank" rel="noopener">YouTube</a></li></ul></div>
+    <div class="legale"><span>© 2026 Tribute-A · Foto: Valerio Di Domenica, Panda Bros Productions</span><span><a href="privacy.html">Privacy</a> · <a href="privacy.html#cookie">Cookie</a> · <a href="#preferenze-cookie" id="apri-consenso">Preferenze cookie</a></span></div>
+  </div>
 </footer>
+
+<section class="consenso" id="consenso" role="dialog" aria-labelledby="consenso-h" aria-describedby="consenso-t" hidden>
+  <h2 id="consenso-h">Cookie</h2>
+  <p id="consenso-t">Vorremmo usare dei cookie per capire quante persone visitano il sito e da dove arrivano<span id="consenso-mkt-t">, e per misurare le nostre pubblicità</span>. Senza il vostro sì non usiamo niente. <a href="privacy.html#cookie">Dettagli</a></p>
+  <div class="scelte" id="consenso-scelte" hidden>
+    <label><input type="checkbox" id="c-stat"><span>Statistiche<small>Google Analytics: visite e pagine, senza sapere chi siete.</small></span></label>
+    <label id="c-mkt-riga"><input type="checkbox" id="c-mkt"><span>Pubblicità<small>Pixel di Meta: misura le richieste arrivate dalle inserzioni su Facebook e Instagram.</small></span></label>
+  </div>
+  <div class="bottoni-consenso">
+    <button class="btn btn--scuro" type="button" id="c-rifiuta">Rifiuta</button>
+    <button class="btn" type="button" id="c-accetta">Accetta</button>
+    <button class="btn salva" type="button" id="c-scegli">Scegli tu</button>
+  </div>
+</section>
+
+<nav class="barra-tel" id="barra-tel" aria-label="Azioni rapide">
+  <a class="btn" href="./#preventivo">Chiedi un preventivo</a>
+  <a class="btn btn--vuoto" href="https://wa.me/393509086700" target="_blank" rel="noopener" aria-label="Scrivici su WhatsApp">WhatsApp</a>
+</nav>
+
+<script>
+(function () {
+  'use strict';
+  var API = 'https://script.google.com/macros/s/AKfycbzFQTgnms2pa01cVrtcpC-oy5PH21eZ1sbL9S4QefigTmYcA0hdAGypQEN2Cbcn19T0/exec';
+  var $ = function (id) { return document.getElementById(id); };
+  document.documentElement.classList.add('js');
+  var chiama = function (fn, args) {
+    return fetch(API, { method: 'POST', credentials: 'omit', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({ fn: fn, args: args || [] }) })
+      .then(function (r) { return r.json(); }).then(function (j) { if (!j.ok) throw new Error(j.e || 'errore'); return j.r; });
+  };
+
+  // ── testata: trasparente sul video, piena quando si scorre; menu del telefono
+  var testa = $('testa'), panino = testa.querySelector('.panino'), barra = $('barra-tel');
+  var aggiorna = function () {
+    var y = window.scrollY || 0;
+    testa.classList.toggle('piena', y > 40);
+    if (barra) barra.classList.toggle('su', y > window.innerHeight * 0.7);
+  };
+  window.addEventListener('scroll', aggiorna, { passive: true }); aggiorna();
+  panino.addEventListener('click', function () {
+    var aperto = testa.classList.toggle('aperta');
+    panino.setAttribute('aria-expanded', aperto ? 'true' : 'false');
+    panino.setAttribute('aria-label', aperto ? 'Chiudi il menu' : 'Apri il menu');
+    document.body.style.overflow = aperto ? 'hidden' : '';
+  });
+  testa.addEventListener('click', function (e) {
+    if (e.target.closest && e.target.closest('a') && testa.classList.contains('aperta')) panino.click();
+  });
+
+  // ── titoli e foto entrano mentre si scorre
+  var entra = document.querySelectorAll('.entra');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (l) { l.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('vista'); io.unobserve(x.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
+    entra.forEach(function (el) { io.observe(el); });
+  } else entra.forEach(function (el) { el.classList.add('vista'); });
+
+  // ── consenso ai cookie: Google Analytics e pixel di Meta si caricano SOLO dopo il sì (niente prima)
+  var GA_ID = 'G-E1SZ30N3HK';
+  var META_PIXEL = '2348329049323746'; // pixel "Sito Tribute-A" (Gestione eventi, account pubblicitario 68988625)
+  var VERSIONE_CONSENSO = 1, DURATA_GIORNI = 180; // il Garante: non richiedere prima di 6 mesi
+  var leggiConsenso = function () {
+    try { var c = JSON.parse(localStorage.getItem('consenso') || 'null');
+      return c && c.v === VERSIONE_CONSENSO && Date.now() - c.t < DURATA_GIORNI * 864e5 ? c : null; } catch (e) { return null; }
+  };
+  var caricati = {};
+  var avvia = function (c) {
+    if (c.stat && GA_ID && !caricati.ga) {
+      caricati.ga = true;
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag('consent', 'default', { analytics_storage: 'granted', ad_storage: c.mkt ? 'granted' : 'denied', ad_user_data: c.mkt ? 'granted' : 'denied', ad_personalization: 'denied' });
+      window.gtag('js', new Date());
+      window.gtag('config', GA_ID, { allow_google_signals: false });
+      var g = document.createElement('script'); g.async = true; g.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID; document.head.appendChild(g);
+    }
+    if (c.mkt && META_PIXEL && !caricati.fb) {
+      caricati.fb = true;
+      /* codice standard del pixel di Meta */
+      !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+        if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v;
+        s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s); }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      window.fbq('init', META_PIXEL); window.fbq('track', 'PageView');
+    }
+  };
+  var banner = $('consenso');
+  var mostraBanner = function (scegli) {
+    var c = leggiConsenso() || { stat: false, mkt: false };
+    $('c-stat').checked = !!c.stat; $('c-mkt').checked = !!c.mkt;
+    $('consenso-mkt-t').hidden = $('c-mkt-riga').hidden = !META_PIXEL;
+    $('consenso-scelte').hidden = !scegli;
+    $('c-scegli').textContent = scegli ? 'Salva le scelte' : 'Scegli tu';
+    banner.hidden = false;
+  };
+  var salvaConsenso = function (stat, mkt) {
+    var c = { v: VERSIONE_CONSENSO, t: Date.now(), stat: !!stat, mkt: !!(mkt && META_PIXEL) };
+    try { localStorage.setItem('consenso', JSON.stringify(c)); } catch (e) { /* niente */ }
+    banner.hidden = true;
+    if ((caricati.ga && !c.stat) || (caricati.fb && !c.mkt)) { location.reload(); return; } // tolto un consenso: si riparte puliti
+    avvia(c);
+  };
+  if (GA_ID || META_PIXEL) {
+    var c0 = leggiConsenso();
+    if (c0) avvia(c0); else mostraBanner(false);
+    $('c-rifiuta').addEventListener('click', function () { salvaConsenso(false, false); });
+    $('c-accetta').addEventListener('click', function () { salvaConsenso(true, true); });
+    $('c-scegli').addEventListener('click', function () {
+      if ($('consenso-scelte').hidden) mostraBanner(true); else salvaConsenso($('c-stat').checked, $('c-mkt').checked);
+    });
+    $('apri-consenso').addEventListener('click', function (e) { e.preventDefault(); mostraBanner(true); });
+    if (location.hash === '#preferenze-cookie') mostraBanner(true);
+  }
+  var lead = function (tipo) {
+    if (window.gtag && caricati.ga) window.gtag('event', 'generate_lead', { form_name: 'preventivo', event_type: tipo });
+    if (window.fbq && caricati.fb) window.fbq('track', 'Lead', { content_name: tipo });
+  };
+  document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function (a) {
+    a.addEventListener('click', function () { if (window.gtag && caricati.ga) window.gtag('event', 'contatto_whatsapp'); if (window.fbq && caricati.fb) window.fbq('track', 'Contact'); });
+  });
+
+})();
+</script>
 </body>
 </html>

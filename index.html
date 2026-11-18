@@ -862,10 +862,16 @@ a:hover > .freccia { transform: translateX(4px); }
   var v = $('video-apertura');
   if (v) {
     var tel = window.matchMedia('(max-width: 767px)').matches;
+    v.muted = true; v.defaultMuted = true; v.playsInline = true; // Safari fa partire da solo solo i video muti, già prima del src
     v.poster = v.getAttribute(tel ? 'data-poster-verticale' : 'data-poster-orizzontale');
     v.src = v.getAttribute(tel ? 'data-verticale' : 'data-orizzontale');
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { v.removeAttribute('autoplay'); v.preload = 'none'; }
-    else { var p = v.play(); if (p && p.catch) p.catch(function () { /* niente autoplay: resta il fotogramma */ }); }
+    else {
+      // se il telefono blocca la partenza (es. Risparmio energetico), il video parte al primo tocco
+      var alTocco = function () { document.removeEventListener('touchstart', alTocco); document.removeEventListener('click', alTocco); v.play().catch(function () {}); };
+      var p = v.play();
+      if (p && p.catch) p.catch(function () { document.addEventListener('touchstart', alTocco, { passive: true }); document.addEventListener('click', alTocco); });
+    }
   }
 
   // ── testata: trasparente sul video, piena quando si scorre; menu del telefono
